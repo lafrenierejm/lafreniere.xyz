@@ -1,7 +1,7 @@
 {
   description = "Source code for lafreniere.xyz";
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/master;
+    nixpkgs.url = github:NixOS/nixpkgs/nixos-22.11;
     flake-utils.url = github:numtide/flake-utils;
     pre-commit-hooks = {
       url = github:cachix/pre-commit-hooks.nix;
@@ -23,6 +23,7 @@
             src = ./.;
             hooks = {
               nixpkgs-fmt.enable = true;
+              prettier.enable = true;
               typos.enable = true;
             };
           };
@@ -31,6 +32,7 @@
           inherit (self.checks.${system}.pre-commit-check) shellHook;
           buildInputs = buildInputs ++ (with pkgs; [
             nixfmt
+            nodePackages_latest.prettier
             typos
           ]);
         };
