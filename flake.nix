@@ -34,6 +34,7 @@
           buildInputs = buildInputs ++ (with pkgs; [
             nixfmt
             nodePackages_latest.prettier
+            terraform-ls
             typos
           ]);
         };
