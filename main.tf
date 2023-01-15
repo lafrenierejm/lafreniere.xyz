@@ -1,5 +1,6 @@
 locals {
-  domain = "lafreniere.xyz"
+  domain       = "lafreniere.xyz"
+  s3_origin_id = "lafreniere.xyz" # TODO
 }
 
 # DNS
@@ -37,4 +38,40 @@ resource "aws_route53_record" "mx-spf" {
   type    = "TXT"
   ttl     = 300 # seconds
   records = ["@v=spf1 include:spf.messagingengine.com ?all"]
+}
+
+# S3
+resource "aws_s3_bucket" "lafreniere_xyz" {
+  bucket = local.domain
+  tags = {
+    Name = local.domain
+  }
+}
+
+resource "aws_s3_bucket_acl" "lafreniere_xyz" {
+  bucket = aws_s3_bucket.lafreniere_xyz.id
+  acl    = "private"
+}
+
+resource "aws_s3_bucket_public_access_block" "lafreniere_xyz" {
+  bucket = aws_s3_bucket.lafreniere_xyz.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
+}
+
+# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_origin_access_control
+# Manages an AWS CloudFront Origin Access Control, which is used by CloudFront Distributions with an Amazon S3 bucket as the origin.
+resource "aws_cloudfront_origin_access_control" "default" {
+  name                              = "lafreniere.xyz"
+  description                       = "lafreniere.xyz"
+  origin_access_control_origin_type = "s3"
+  signing_behavior                  = "always"
+  signing_protocol                  = "sigv4"
+}
+
+output "s3_uri" {
+  value = "s3://${aws_s3_bucket.lafreniere_xyz.id}"
 }
