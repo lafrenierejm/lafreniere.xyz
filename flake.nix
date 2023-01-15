@@ -13,6 +13,7 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
         buildInputs = with pkgs; [
+          awscli2
           terraform
           terragrunt
         ];
