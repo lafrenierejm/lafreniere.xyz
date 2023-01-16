@@ -33,12 +33,59 @@ resource "aws_route53_record" "mx" {
   ]
 }
 
-resource "aws_route53_record" "mx-spf" {
+resource "aws_route53_record" "imaps" {
   zone_id = aws_route53_zone.root.zone_id
-  name    = "mx-spf"
+  name    = "_imaps._tcp.${aws_route53_zone.root.name}"
+  type    = "SRV"
+  ttl     = local.ttl
+  records = [
+    "0 1 993 imap.fastmail.com."
+  ]
+}
+
+resource "aws_route53_record" "submission" {
+  zone_id = aws_route53_zone.root.zone_id
+  name    = "_submission._tcp.${aws_route53_zone.root.name}"
+  type    = "SRV"
+  ttl     = local.ttl
+  records = [
+    "0 1 587 smtp.fastmail.com."
+  ]
+}
+
+## SPF
+resource "aws_route53_record" "spf" {
+  zone_id = aws_route53_zone.root.zone_id
+  name    = aws_route53_zone.root.name
+  type    = "SPF"
+  ttl     = local.ttl
+  records = [
+    "v=spf1 include:spf.messagingengine.com ?all",
+  ]
+}
+
+resource "aws_route53_record" "spf_txt" {
+  zone_id = aws_route53_zone.root.zone_id
+  name    = aws_route53_zone.root.name
   type    = "TXT"
-  ttl     = 300 # seconds
-  records = ["@v=spf1 include:spf.messagingengine.com ?all"]
+  ttl     = local.ttl
+  records = [
+    "v=spf1 include:spf.messagingengine.com ?all"
+  ]
+}
+
+## DKIM
+resource "aws_route53_record" "domainkey" {
+  count = 3
+
+  zone_id = aws_route53_zone.root.zone_id
+  name    = "fm${count.index + 1}._domainkey.${aws_route53_zone.root.name}"
+  type    = "CNAME"
+  ttl     = local.ttl
+
+  records = [
+    "fm${count.index + 1}.${aws_route53_zone.root.name}.dkim.fmhosted.com."
+  ]
 }
 
 # S3
