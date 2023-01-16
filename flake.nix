@@ -17,7 +17,6 @@
           git-crypt
           gnupg
           terraform
-          terragrunt
         ];
       in
       rec {
