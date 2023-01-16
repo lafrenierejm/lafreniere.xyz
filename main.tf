@@ -1,6 +1,7 @@
 locals {
   domain       = "lafreniere.xyz"
   s3_origin_id = "lafreniere.xyz" # TODO
+  ttl          = 300              # seconds
 }
 
 # DNS
@@ -16,16 +17,16 @@ resource "aws_route53_record" "www" {
   zone_id = aws_route53_zone.root.zone_id
   name    = aws_route53_zone.www.name
   type    = "NS"
-  ttl     = 300 # seconds
+  ttl     = local.ttl
   records = aws_route53_zone.www.name_servers
 }
 
 ## Mail
 resource "aws_route53_record" "mx" {
   zone_id = aws_route53_zone.root.zone_id
-  name    = "mx-primary"
+  name    = aws_route53_zone.root.name
   type    = "MX"
-  ttl     = 300 # seconds
+  ttl     = local.ttl
   records = [
     "10 in1-smtp.messagingengine.com.",
     "20 in2-smtp.messagingengine.com.",
