@@ -14,6 +14,7 @@
         pkgs = nixpkgs.legacyPackages.${system};
         buildInputs = with pkgs; [
           awscli2
+          git-crypt
           terraform
           terragrunt
         ];
