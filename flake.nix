@@ -15,6 +15,7 @@
         buildInputs = with pkgs; [
           awscli2
           git-crypt
+          gnupg
           terraform
           terragrunt
         ];
