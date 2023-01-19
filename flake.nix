@@ -33,6 +33,7 @@
         devShell = pkgs.mkShell {
           inherit (self.checks.${system}.pre-commit-check) shellHook;
           buildInputs = buildInputs ++ (with pkgs; [
+            dig
             nixfmt
             nodePackages_latest.prettier
             terraform-ls
