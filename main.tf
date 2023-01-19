@@ -9,17 +9,6 @@ resource "aws_route53_zone" "root" {
   name = local.domain
 }
 
-resource "aws_route53_zone" "www" {
-  name = "www.${local.domain}"
-}
-
-resource "aws_route53_record" "www" {
-  zone_id = aws_route53_zone.root.zone_id
-  name    = aws_route53_zone.www.name
-  type    = "NS"
-  ttl     = local.ttl
-  records = aws_route53_zone.www.name_servers
-}
 
 ## Mail
 resource "aws_route53_record" "mx" {
@@ -154,8 +143,8 @@ resource "aws_s3_bucket_public_access_block" "lafreniere_xyz" {
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_origin_access_control
 # Manages an AWS CloudFront Origin Access Control, which is used by CloudFront Distributions with an Amazon S3 bucket as the origin.
 resource "aws_cloudfront_origin_access_control" "default" {
-  name                              = "lafreniere.xyz"
-  description                       = "lafreniere.xyz"
+  name                              = local.domain
+  description                       = local.domain
   origin_access_control_origin_type = "s3"
   signing_behavior                  = "always"
   signing_protocol                  = "sigv4"
