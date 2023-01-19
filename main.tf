@@ -88,6 +88,47 @@ resource "aws_route53_record" "domainkey" {
   ]
 }
 
+# Certificate
+resource "aws_acm_certificate" "lafreniere_xyz" {
+  domain_name               = local.domain
+  subject_alternative_names = ["*.${local.domain}"]
+  validation_method         = "DNS"
+
+  tags = {
+    Name = local.domain
+  }
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+
+## Add the DNS record for validation.
+resource "aws_route53_record" "acm_validation" {
+  for_each = {
+    for dvo in aws_acm_certificate.lafreniere_xyz.domain_validation_options : dvo.domain_name => {
+      name   = dvo.resource_record_name
+      record = dvo.resource_record_value
+      type   = dvo.resource_record_type
+    }
+  }
+
+  allow_overwrite = true
+  name            = each.value.name
+  records         = [each.value.record]
+  ttl             = local.ttl
+  type            = each.value.type
+  zone_id         = aws_route53_zone.root.zone_id
+}
+
+## Wait for the certificate to validate.
+resource "aws_acm_certificate_validation" "lafreniere_xyz" {
+  for_each = aws_route53_record.acm_validation
+
+  certificate_arn         = aws_acm_certificate.lafreniere_xyz.arn
+  validation_record_fqdns = [each.value.fqdn]
+}
+
 # S3
 resource "aws_s3_bucket" "lafreniere_xyz" {
   bucket = local.domain
