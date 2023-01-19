@@ -25,8 +25,14 @@
             src = ./.;
             hooks = {
               nixpkgs-fmt.enable = true;
-              prettier.enable = true;
-              typos.enable = true;
+              prettier = {
+                enable = true;
+                excludes = [ ".*\\.tfstate" ];
+              };
+              typos = {
+                enable = true;
+                excludes = [ ".*\\.tfstate" ];
+              };
             };
           };
         };
