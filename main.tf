@@ -82,6 +82,20 @@ resource "aws_acm_certificate" "lafreniere_xyz" {
   }
 }
 
+## CAA
+resource "aws_route53_record" "caa" {
+  name = aws_route53_zone.root.name
+  type = "CAA"
+  ttl  = local.ttl
+  records = [
+    join(" ", ["0", "issue", "amazon.com"]),
+    join(" ", ["0", "issue", "amazonaws.com"]),
+    join(" ", ["0", "issue", "amazontrust.com"]),
+    join(" ", ["0", "issue", "awstrust.com"]),
+  ]
+  zone_id = aws_route53_zone.root.zone_id
+}
+
 ## Add the DNS record for validation.
 resource "aws_route53_record" "acm_validation" {
   for_each = {
