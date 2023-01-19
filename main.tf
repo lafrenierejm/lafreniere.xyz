@@ -43,16 +43,6 @@ resource "aws_route53_record" "submission" {
 }
 
 ## SPF
-resource "aws_route53_record" "spf" {
-  zone_id = aws_route53_zone.root.zone_id
-  name    = aws_route53_zone.root.name
-  type    = "SPF"
-  ttl     = local.ttl
-  records = [
-    "v=spf1 include:spf.messagingengine.com ?all",
-  ]
-}
-
 resource "aws_route53_record" "spf_txt" {
   zone_id = aws_route53_zone.root.zone_id
   name    = aws_route53_zone.root.name
