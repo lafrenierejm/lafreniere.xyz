@@ -88,10 +88,13 @@ resource "aws_route53_record" "caa" {
   type = "CAA"
   ttl  = local.ttl
   records = [
-    join(" ", ["0", "issue", "amazon.com"]),
-    join(" ", ["0", "issue", "amazonaws.com"]),
-    join(" ", ["0", "issue", "amazontrust.com"]),
-    join(" ", ["0", "issue", "awstrust.com"]),
+    for ca in [
+      "amazon.com",
+      "amazonaws.com",
+      "amazontrust.com",
+      "awstrust.com",
+    ] :
+    join(" ", ["0", "issue", "\"${ca}\""])
   ]
   zone_id = aws_route53_zone.root.zone_id
 }
