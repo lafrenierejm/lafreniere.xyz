@@ -1,0 +1,13 @@
+baseURL = 'https://d19qhx4ioawdt7.cloudfront.net'
+languageCode = 'en-us'
+title = 'Joseph LaFreniere'
+
+enableGitInfo = true
+
+[params]
+BookComments = false
+BookCommitPath = "commit"
+BookDateFormat = "2006-01-02T15:04:05Z"
+BookMenuBundle = "/menu"
+BookRepo = "https://git.sr.ht/~lafrenierejm/lafreniere.xyz"
+BookTheme = 'light'

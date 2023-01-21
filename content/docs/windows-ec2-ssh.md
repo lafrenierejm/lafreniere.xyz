@@ -1,26 +1,19 @@
-#+TITLE: Accessing Windows EC2 Instances via SSH
-#+AUTHOR: Joseph LaFreniere
-#+EMAIL: joseph@lafreniere.xyz
-#+OPTIONS: toc:nil
-#+OPTIONS: html5-fancy:t
+---
+title: "Accessing Windows EC2 Instances via SSH"
+date: 2023-01-21T12:12:11-06:00
+draft: false
+---
 
-#+begin_aside
-The content of this blog post is licensed under the terms of [[https://creativecommons.org/licenses/by-sa/4.0/][CC BY-SA 4.0]].
-It started life as a Stackoverflow answer I posted [[https://stackoverflow.com/a/75009915/8468492][here]].
-#+end_aside
+This post started life as a Stackoverflow answer I posted [here](https://stackoverflow.com/a/75009915/8468492).
 
-Remote Windows instances have typically been accessed via either the [[https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/understanding-remote-desktop-protocol][Remote Desktop Protocol (RDP)]] for interactive use or [[https://learn.microsoft.com/en-us/windows/win32/winrm/portal][Windows Remote Management (WinRM)]] for programmatic access.
+Remote Windows instances have typically been accessed via either the [Remote Desktop Protocol (RDP)](https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/understanding-remote-desktop-protocol) for interactive use or [Windows Remote Management (WinRM)](https://learn.microsoft.com/en-us/windows/win32/winrm/portal) for programmatic access.
 Recent releases of Windows, though, offer official support for Secure Shell (SSH) via the OpenSSH daemon.
 This post walks through the setup of a Windows EC2 instance in AWS so it can be accessed via SSH.
 
-#+TOC: headlines
+# Supported Versions of Windows
 
-* Supported Versions of Windows
-:PROPERTIES:
-:CUSTOM_ID: supported-versions-of-windows
-:END:
+As of this writing, the supported versions of Windows described in the Microsoft Learn article ["Get started with OpenSSH for Windows"](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell) are
 
-As of this writing, the supported versions of Windows described in the Microsoft Learn article [[https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell]["Get started with OpenSSH for Windows"]] are
 - Windows 10 build 1809 and later
 - Windows Server 2019
 - Windows Server 2022
@@ -28,16 +21,13 @@ As of this writing, the supported versions of Windows described in the Microsoft
 The steps in this guide have been tested against Server 2019.
 Specifically, I used the base Amazon Machine Image (AMI) ~Windows_Server-2019-English-Full-ECS_Optimized-2022.12.14~.
 
-* Building an AMI
-:PROPERTIES:
-:CUSTOM_ID: building-the-ami
-:END:
+# Building an AMI
 
 To be able to connect to a Windows EC2 instance via SSH once the image has started, the OpenSSH ~sshd~ and ~ssh-agent~ services need to be installed and set to run on boot.
-The above [[https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell]["Get started with OpenSSH for Windows"]] article includes the relevant commands to accomplish this.
+The above ["Get started with OpenSSH for Windows"](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell) article includes the relevant commands to accomplish this.
 Here they are as a single PowerShell script:
 
-#+begin_src powershell
+```powershell
 $ErrorActionPreference = 'Stop'
 
 Write-Host 'Installing and starting sshd'
@@ -52,23 +42,23 @@ Start-Service ssh-agent
 
 Write-Host 'Set PowerShell as the default SSH shell'
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value (Get-Command powershell.exe).Path -PropertyType String -Force
-#+end_src
+```
 
-* Launching the Instance
+# Launching the Instance
 
 Once an AMI with the above setup has been successfully built, there are a handful of options to pay attention to when launching the actual EC2 instance.
 
-1. You /must/ provide a valid SSH keypair.
-2. You /must/ ensure the public half of that keypair is added to your preferred user's list of authenticated keys on startup.
-3. You /should/ use IMDSv2.
+1. You _must_ provide a valid SSH keypair.
+2. You _must_ ensure the public half of that keypair is added to your preferred user's list of authenticated keys on startup.
+3. You should use IMDSv2.
 
 Of these, dynamically adding the public key is the only step isn't an explicit step when launching any given instance.
 The following PowerShell script serves the purpose of configuration the ~Administrator~ user's authorized keys file.
 It should be provided as the instance's userdata script.
-Note that the ~<powershell>~ and ~</powershell>~ tags /are/ intentional parts of the userdata;
+Note that the ~<powershell>~ and ~</powershell>~ tags _are_ intentional parts of the userdata;
 they are parsed and extracted by AWS prior to the script being executed.
 
-#+begin_src powershell
+```powershell
 <powershell>
 
 # Userdata script to enable SSH access as user Administrator via SSH keypair.
@@ -92,14 +82,14 @@ Set-Service -Name ssh-agent -StartupType "Automatic"
 Restart-Service -Name ssh-agent
 
 </powershell>
-#+end_src
+```
 
-* Connect to the Instance
+# Connect to the Instance
 
 The resulting instance can be connected to via SSH like normal.
 Simply specify the relevant SSH private key and user.
 For example:
 
-#+begin_src shell
+```shell
 ssh -i ~/.ssh/my-keypair Administrator@my.ec2.instance
-#+end_src
+```
