@@ -17,6 +17,7 @@
           git-crypt
           gnupg
           terraform
+          hugo
         ];
       in
       rec {
