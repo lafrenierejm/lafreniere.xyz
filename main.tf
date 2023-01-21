@@ -161,6 +161,38 @@ resource "aws_s3_bucket_public_access_block" "lafreniere_xyz" {
   restrict_public_buckets = true
 }
 
+## Allow CloudFront access to the bucket.
+resource "aws_s3_bucket_policy" "cloudfront" {
+  bucket = aws_s3_bucket.lafreniere_xyz.id
+  policy = data.aws_iam_policy_document.access_s3_from_cloudfront.json
+}
+
+data "aws_iam_policy_document" "access_s3_from_cloudfront" {
+  statement {
+    sid = "AllowCloudfrontServicePrincipal"
+    principals {
+      type = "Service"
+      identifiers = [
+        "cloudfront.amazonaws.com",
+      ]
+    }
+    actions = [
+      "s3:GetObject",
+    ]
+    resources = [
+      "${aws_s3_bucket.lafreniere_xyz.arn}/*"
+    ]
+    condition {
+      test     = "ForAllValues:StringEquals"
+      variable = "AWS:SourceArn"
+      values = [
+        aws_cloudfront_distribution.s3_distribution.arn,
+      ]
+    }
+  }
+}
+
+
 # CloudFront
 
 ## Lookup the issued certificate.
