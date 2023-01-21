@@ -1,7 +1,6 @@
 locals {
-  domain       = "lafreniere.xyz"
-  s3_origin_id = "lafreniere.xyz" # TODO
-  ttl          = 300              # seconds
+  domain = "lafreniere.xyz"
+  ttl    = 300 # seconds
 }
 
 # DNS
@@ -9,6 +8,21 @@ resource "aws_route53_zone" "root" {
   name = local.domain
 }
 
+## Web
+resource "aws_route53_record" "www" {
+  for_each = toset(["A", "AAAA"])
+
+  zone_id = aws_route53_zone.root.zone_id
+  name    = local.domain
+  type    = each.value
+
+  # https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html#routing-to-cloudfront-distribution-config
+  alias {
+    name                   = aws_cloudfront_distribution.s3_distribution.domain_name
+    zone_id                = aws_cloudfront_distribution.s3_distribution.hosted_zone_id
+    evaluate_target_health = true
+  }
+}
 
 ## Mail
 resource "aws_route53_record" "mx" {
@@ -147,14 +161,69 @@ resource "aws_s3_bucket_public_access_block" "lafreniere_xyz" {
   restrict_public_buckets = true
 }
 
-# https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_origin_access_control
-# Manages an AWS CloudFront Origin Access Control, which is used by CloudFront Distributions with an Amazon S3 bucket as the origin.
+# CloudFront
+
+## Lookup the issued certificate.
+data "aws_acm_certificate" "root" {
+  domain      = local.domain
+  most_recent = true
+}
+
+## https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_origin_access_control
+## Manages an AWS CloudFront Origin Access Control, which is used by CloudFront Distributions with an Amazon S3 bucket as the origin.
 resource "aws_cloudfront_origin_access_control" "default" {
   name                              = local.domain
   description                       = local.domain
   origin_access_control_origin_type = "s3"
   signing_behavior                  = "always"
   signing_protocol                  = "sigv4"
+}
+
+## https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_distribution
+## Create an Amazon CloudFront web distribution.
+resource "aws_cloudfront_distribution" "s3_distribution" {
+  depends_on = [aws_acm_certificate_validation.lafreniere_xyz]
+
+  aliases = [
+    local.domain,
+    "www.${local.domain}",
+  ]
+  default_cache_behavior {
+    allowed_methods = ["GET", "HEAD", "OPTIONS"]
+    cached_methods  = ["GET", "HEAD"]
+    compress        = true
+    forwarded_values {
+      cookies {
+        forward = "all"
+      }
+      query_string = true
+    }
+    target_origin_id       = aws_s3_bucket.lafreniere_xyz.bucket_regional_domain_name
+    viewer_protocol_policy = "redirect-to-https"
+  }
+  default_root_object = "index.html"
+  enabled             = true
+  is_ipv6_enabled     = true
+  http_version        = "http3"
+
+  origin {
+    domain_name              = aws_s3_bucket.lafreniere_xyz.bucket_regional_domain_name
+    origin_access_control_id = aws_cloudfront_origin_access_control.default.id
+    origin_id                = aws_s3_bucket.lafreniere_xyz.bucket_regional_domain_name
+  }
+
+  restrictions {
+    geo_restriction {
+      restriction_type = "none"
+      locations        = []
+    }
+  }
+
+  viewer_certificate {
+    acm_certificate_arn      = data.aws_acm_certificate.root.arn
+    minimum_protocol_version = "TLSv1.2_2021"
+    ssl_support_method       = "sni-only"
+  }
 }
 
 output "s3_uri" {
