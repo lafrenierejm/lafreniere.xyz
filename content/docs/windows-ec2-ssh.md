@@ -51,7 +51,7 @@ Write-Host 'Set PowerShell as the default SSH shell'
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value (Get-Command powershell.exe).Path -PropertyType String -Force
 ```
 
-## Launching the Instance
+## Launching an Instance
 
 Once an AMI with the above setup has been successfully built, there are a handful of options to pay attention to when launching the actual EC2 instance.
 
