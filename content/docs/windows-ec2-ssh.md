@@ -19,11 +19,11 @@ As of this writing, the supported versions of Windows described in the Microsoft
 - Windows Server 2022
 
 The steps in this guide have been tested against Server 2019.
-Specifically, I used the base Amazon Machine Image (AMI) ~Windows_Server-2019-English-Full-ECS_Optimized-2022.12.14~.
+Specifically, I used the base Amazon Machine Image (AMI) `Windows_Server-2019-English-Full-ECS_Optimized-2022.12.14`.
 
 # Building an AMI
 
-To be able to connect to a Windows EC2 instance via SSH once the image has started, the OpenSSH ~sshd~ and ~ssh-agent~ services need to be installed and set to run on boot.
+To be able to connect to a Windows EC2 instance via SSH once the image has started, the OpenSSH `sshd` and `ssh-agent` services need to be installed and set to run on boot.
 The above ["Get started with OpenSSH for Windows"](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell) article includes the relevant commands to accomplish this.
 Here they are as a single PowerShell script:
 
@@ -53,9 +53,9 @@ Once an AMI with the above setup has been successfully built, there are a handfu
 3. You should use IMDSv2.
 
 Of these, dynamically adding the public key is the only step isn't an explicit step when launching any given instance.
-The following PowerShell script serves the purpose of configuration the ~Administrator~ user's authorized keys file.
+The following PowerShell script serves the purpose of configuration the `Administrator` user's authorized keys file.
 It should be provided as the instance's userdata script.
-Note that the ~<powershell>~ and ~</powershell>~ tags _are_ intentional parts of the userdata;
+Note that the `<powershell>` and `</powershell>` tags _are_ intentional parts of the userdata;
 they are parsed and extracted by AWS prior to the script being executed.
 
 ```powershell
