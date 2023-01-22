@@ -84,7 +84,7 @@ Restart-Service -Name ssh-agent
 </powershell>
 ```
 
-# Connect to the Instance
+# Connecting to the Instance
 
 The resulting instance can be connected to via SSH like normal.
 Simply specify the relevant SSH private key and user.
