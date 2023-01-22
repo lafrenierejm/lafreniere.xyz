@@ -6,7 +6,12 @@ draft: false
 
 # Accessing Windows EC2 Instances via SSH
 
+{{< hint info >}}
+**Too Long; Didn't Read**
+
 This post started life as a Stackoverflow answer I posted [here](https://stackoverflow.com/a/75009915/8468492).
+See that post for the same outcome with slightly less detail.
+{{< /hint >}}
 
 Remote Windows instances have typically been accessed via either the [Remote Desktop Protocol (RDP)](https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/understanding-remote-desktop-protocol) for interactive use or [Windows Remote Management (WinRM)](https://learn.microsoft.com/en-us/windows/win32/winrm/portal) for programmatic access.
 Recent releases of Windows, though, offer official support for Secure Shell (SSH) via the OpenSSH daemon.
