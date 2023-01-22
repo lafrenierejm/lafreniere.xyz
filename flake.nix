@@ -26,6 +26,7 @@
           pre-commit-check = pre-commit-hooks.lib.${system}.run {
             src = ./.;
             hooks = {
+              markdownlint.enable = true;
               nixpkgs-fmt.enable = true;
               prettier = {
                 enable = true;
@@ -43,6 +44,7 @@
           buildInputs = buildInputs ++ (with pkgs; [
             dig
             nixfmt
+            nodePackages_latest.markdownlint-cli2
             nodePackages_latest.prettier
             terraform-ls
             typos

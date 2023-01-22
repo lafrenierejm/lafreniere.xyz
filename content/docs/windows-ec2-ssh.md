@@ -4,13 +4,15 @@ date: 2023-01-21T12:12:11-06:00
 draft: false
 ---
 
+# Accessing Windows EC2 Instances via SSH
+
 This post started life as a Stackoverflow answer I posted [here](https://stackoverflow.com/a/75009915/8468492).
 
 Remote Windows instances have typically been accessed via either the [Remote Desktop Protocol (RDP)](https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/understanding-remote-desktop-protocol) for interactive use or [Windows Remote Management (WinRM)](https://learn.microsoft.com/en-us/windows/win32/winrm/portal) for programmatic access.
 Recent releases of Windows, though, offer official support for Secure Shell (SSH) via the OpenSSH daemon.
 This post walks through the setup of a Windows EC2 instance in AWS so it can be accessed via SSH.
 
-# Supported Versions of Windows
+## Supported Versions of Windows
 
 As of this writing, the supported versions of Windows described in the Microsoft Learn article ["Get started with OpenSSH for Windows"](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell) are
 
@@ -21,7 +23,7 @@ As of this writing, the supported versions of Windows described in the Microsoft
 The steps in this guide have been tested against Server 2019.
 Specifically, I used the base Amazon Machine Image (AMI) `Windows_Server-2019-English-Full-ECS_Optimized-2022.12.14`.
 
-# Building an AMI
+## Building an AMI
 
 To be able to connect to a Windows EC2 instance via SSH once the image has started, the OpenSSH `sshd` and `ssh-agent` services need to be installed and set to run on boot.
 The above ["Get started with OpenSSH for Windows"](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell) article includes the relevant commands to accomplish this.
@@ -44,7 +46,7 @@ Write-Host 'Set PowerShell as the default SSH shell'
 New-ItemProperty -Path "HKLM:\SOFTWARE\OpenSSH" -Name DefaultShell -Value (Get-Command powershell.exe).Path -PropertyType String -Force
 ```
 
-# Launching the Instance
+## Launching the Instance
 
 Once an AMI with the above setup has been successfully built, there are a handful of options to pay attention to when launching the actual EC2 instance.
 
@@ -84,7 +86,7 @@ Restart-Service -Name ssh-agent
 </powershell>
 ```
 
-# Connecting to the Instance
+## Connecting to the Instance
 
 The resulting instance can be connected to via SSH like normal.
 Simply specify the relevant SSH private key and user.
