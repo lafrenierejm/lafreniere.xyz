@@ -60,7 +60,7 @@ Once an AMI with the above setup has been successfully built, there are a handfu
 3. You should use IMDSv2.
 
 Of these, dynamically adding the public key is the only step that doesn't have a dedicated option in AWS.
-The following PowerShell script serves the purpose of configuration the `Administrator` user's authorized keys file.
+The following PowerShell script configures the `Administrator` user's authorized keys file.
 It should be provided as the instance's userdata script.
 Note that the `<powershell>` and `</powershell>` tags _are_ intentional parts of the userdata;
 they are parsed and extracted by AWS prior to the script being executed.
