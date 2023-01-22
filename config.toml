@@ -10,3 +10,4 @@ BookCommitPath = "commit"
 BookDateFormat = "2006-01-02T15:04:05Z"
 BookRepo = "https://git.sr.ht/~lafrenierejm/lafreniere.xyz"
 BookTheme = 'auto'
+BookToC = false
