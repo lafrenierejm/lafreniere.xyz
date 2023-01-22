@@ -6,7 +6,7 @@ type: docs
 # About Me
 
 My name is Joseph LaFreniere.
-I specialize in DevOps and SRE-related technologies, with a particular interest in free and open source software (FOSS) and reproducibility.
+I specialize in DevOps and SRE-related technologies, with a particular interest in free and open source software (FOSS) and software reproducibility.
 
 Some of my online profiles include:
 
