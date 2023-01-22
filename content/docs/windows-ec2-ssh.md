@@ -52,7 +52,7 @@ Once an AMI with the above setup has been successfully built, there are a handfu
 2. You _must_ ensure the public half of that keypair is added to your preferred user's list of authenticated keys on startup.
 3. You should use IMDSv2.
 
-Of these, dynamically adding the public key is the only step isn't an explicit step when launching any given instance.
+Of these, dynamically adding the public key is the only step that doesn't have a dedicated option in AWS.
 The following PowerShell script serves the purpose of configuration the `Administrator` user's authorized keys file.
 It should be provided as the instance's userdata script.
 Note that the `<powershell>` and `</powershell>` tags _are_ intentional parts of the userdata;
