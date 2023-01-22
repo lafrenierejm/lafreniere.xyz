@@ -16,8 +16,9 @@
           awscli2
           git-crypt
           gnupg
-          terraform
           hugo
+          python310
+          terraform
         ];
       in
       rec {
