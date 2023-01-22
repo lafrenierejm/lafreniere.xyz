@@ -10,9 +10,12 @@ I specialize in DevOps and SRE-related technologies, with a particular interest 
 
 Some of my online profiles include:
 
-- [`@lafrenierejm` on GitHub](https://github.com/lafrenierejm/)
-- [`@lafrenierejm` on GitLab](https://gitlab.com/lafrenierejm)
-- [`~lafrenierejm` on sourcehut](https://sr.ht/~lafrenierejm/)
+<ul>
+<li><a href="https://github.com/lafrenierejm/"><code>&#64;lafrenierejm</code> on GitHub</a></li>
+<li><a href="https://gitlab.com/lafrenierejm/"><code>&#64;lafrenierejm</code> on GitLab</a></li>
+<li><a href="https://sr.ht/~lafrenierejm/"><code>~lafrenierejm</code> on sourcehut</a></li>
+<li><a rel="me" href="https://hachyderm.io/@lafrenierejm"><code>&#64;lafrenierejm</code> on Mastodon</a></li>
+</ul>
 
 ## About This Site
 

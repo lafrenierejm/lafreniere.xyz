@@ -10,3 +10,6 @@ BookCommitPath = "commit"
 BookDateFormat = "2006-01-02"
 BookRepo = "https://git.sr.ht/~lafrenierejm/lafreniere.xyz"
 BookTheme = 'auto'
+
+[markup.goldmark.renderer]
+unsafe = true
