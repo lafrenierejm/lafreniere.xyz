@@ -7,7 +7,7 @@ draft: false
 {{< hint info >}}
 **Too Long; Didn't Read**
 
-This post started life as a Stackoverflow answer I posted [here](https://stackoverflow.com/a/75009915/8468492).
+This post started life as a Stack Overflow answer I posted [here](https://stackoverflow.com/a/75009915/8468492).
 See that post for the same outcome with slightly less detail.
 {{< /hint >}}
 
