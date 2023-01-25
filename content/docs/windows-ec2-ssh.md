@@ -4,8 +4,6 @@ date: 2023-01-21T12:12:11-06:00
 draft: false
 ---
 
-# Accessing Windows EC2 Instances via SSH
-
 {{< hint info >}}
 **Too Long; Didn't Read**
 
