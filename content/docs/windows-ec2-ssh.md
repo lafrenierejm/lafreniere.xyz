@@ -13,7 +13,7 @@ See that post for the same outcome with slightly less detail.
 
 Remote Windows instances have typically been accessed via either the [Remote Desktop Protocol (RDP)](https://learn.microsoft.com/en-us/troubleshoot/windows-server/remote/understanding-remote-desktop-protocol) for interactive use or [Windows Remote Management (WinRM)](https://learn.microsoft.com/en-us/windows/win32/winrm/portal) for programmatic access.
 Recent releases of Windows, though, offer official support for Secure Shell (SSH) via the OpenSSH daemon.
-This post walks through the setup of a Windows EC2 instance in AWS so it can be accessed via SSH.
+This post walks through the setup of a Windows instance in [AWS Elastic Compute Cloud (EC2)](https://aws.amazon.com/ec2/) so the instance can be accessed via SSH.
 
 ## Supported Versions of Windows
 
