@@ -1,9 +1,10 @@
 ---
 title: About Me
+date: 2023-01-22
 type: docs
 ---
 
-# About Me
+<hr>
 
 My name is Joseph LaFreniere.
 I specialize in DevOps and SRE-related technologies, with a particular interest in free and open source software (FOSS) and software reproducibility.
