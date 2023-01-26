@@ -1,4 +1,11 @@
 #!/usr/bin/env python3
+"""Run hugo, cleanup non-root index.html files, then upload to S3.
+
+The cleanup step is necessary for serving the contents of the S3 bucket via CloudFront.
+CloudFront throws a fit if there are any ``index.html`` files inside an S3 bucket that aren't the root ``/index.html``.
+
+:copyright: Joseph LaFreniere <joseph@lafreniere.xyz>
+"""
 
 from os import close
 from pathlib import Path
