@@ -3,6 +3,8 @@ locals {
   ttl    = 300 # seconds
 }
 
+data "aws_caller_identity" "current" {}
+
 # DNS
 resource "aws_route53_zone" "root" {
   name = local.domain
@@ -137,6 +139,83 @@ resource "aws_acm_certificate_validation" "lafreniere_xyz" {
 
   certificate_arn         = aws_acm_certificate.lafreniere_xyz.arn
   validation_record_fqdns = [each.value.fqdn]
+}
+
+# DNSSEC
+## Key
+data "aws_iam_policy_document" "dnssec_key" {
+  statement {
+    sid = "Allow Route 53 DNSSEC Service"
+    actions = [
+      "kms:DescribeKey",
+      "kms:GetPublicKey",
+      "kms:Sign",
+    ]
+    principals {
+      type        = "Service"
+      identifiers = ["dnssec-route53.amazonaws.com"]
+    }
+    resources = ["*"]
+    condition {
+      test     = "ForAllValues:StringEquals"
+      variable = "aws:SourceAccount"
+      values   = [data.aws_caller_identity.current.account_id]
+    }
+    condition {
+      test     = "ArnLike"
+      variable = "aws:SourceArn"
+      values   = ["arn:aws:route53:::hostedzone/*"]
+    }
+  }
+
+  statement {
+    sid     = "Allow Route 53 DNSSEC to CreateGrant"
+    actions = ["kms:CreateGrant"]
+    principals {
+      type        = "Service"
+      identifiers = ["dnssec-route53.amazonaws.com"]
+    }
+    resources = ["*"]
+    condition {
+      test     = "Bool"
+      variable = "kms:GrantIsForAWSResource"
+      values   = ["true"]
+    }
+  }
+
+  statement {
+    sid     = "Enable IAM User Permissions"
+    actions = ["kms:*"]
+    principals {
+      type        = "AWS"
+      identifiers = ["arn:aws:iam::${data.aws_caller_identity.current.account_id}:root"]
+    }
+    resources = ["*"]
+  }
+}
+
+resource "aws_kms_key" "lafreniere_xyz_dnssec" {
+  customer_master_key_spec = "ECC_NIST_P256"
+  deletion_window_in_days  = 7
+  key_usage                = "SIGN_VERIFY"
+  policy                   = data.aws_iam_policy_document.dnssec_key.json
+}
+
+data "aws_kms_public_key" "lafreniere_xyz_dnssec" {
+  key_id = aws_kms_key.lafreniere_xyz_dnssec.key_id
+}
+
+resource "aws_route53_key_signing_key" "lafreniere_xyz" {
+  hosted_zone_id             = aws_route53_zone.root.id
+  key_management_service_arn = aws_kms_key.lafreniere_xyz_dnssec.arn
+  name                       = local.domain
+}
+
+resource "aws_route53_hosted_zone_dnssec" "example" {
+  depends_on = [
+    aws_route53_key_signing_key.lafreniere_xyz
+  ]
+  hosted_zone_id = aws_route53_key_signing_key.lafreniere_xyz.hosted_zone_id
 }
 
 # S3
