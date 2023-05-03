@@ -1,4 +1,8 @@
+.hugo_build.lock
+.terraform.lock.hcl
+.terraform/
 /.pre-commit-config.yaml
 /public
+/resources
 /tf.out
 terraform.tfstate.backup
