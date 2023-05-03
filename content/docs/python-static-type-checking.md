@@ -145,3 +145,54 @@ async def aws_client(
             yield client
     # Handle the other Environment members.
 ```
+
+## Runtime Benefits
+
+Type hints are available at runtime.
+This means that _regular Python code_ can inspect and use the information from those hints.
+[Typer](https://typer.tiangolo.com/) is one library that takes advantage of that to compose low-code CLIs that are type checked at runtime.
+
+Let's build a mock CLI to demonstrate.
+The requirements:
+- Mandatory environment (as defined earlier) with a default value of `LOCAL`.
+- Optional `--verbose`/`-v` flag.
+
+```python
+from typing_extensions import Annotated
+
+import typer
+
+from .environment import Environment # this is the same enum we defined earlier
+
+def main(
+    env: Annotated[Environment, typer.Argument()] = Environment.LOCAL,
+    verbose: Annotated[bool, typer.Option(help="Enable debug logging")] = False,
+) -> None:
+    print(f"{env=}, {verbose=}")
+
+
+if __name__ == "__main__":
+    typer.run(main)
+```
+
+Running that script with the (built-in) `--help` flag:
+```text
+$ python -m python_static_types --help
+Usage: python -m python_static_types [OPTIONS] [ENV]:[prod|dev|local]
+
+Arguments:
+  [ENV]:[prod|dev|local]  [default: Environment.LOCAL]
+
+Options:
+  --verbose / --no-verbose  Enable debug logging  [default: no-verbose]
+  --help                    Show this message and exit.
+```
+
+And attempting to pass an invalid environment:
+```text
+$ python -m python_static_types nonexistent-env
+Usage: python -m python_static_types [OPTIONS] [ENV]:[prod|dev|local]
+Try 'python -m python_static_types --help' for help.
+
+Error: Invalid value for '[ENV]:[prod|dev|local]': 'nonexistent-env' is not one of 'prod', 'dev', 'local'.
+```
