@@ -11,11 +11,27 @@ resource "aws_route53_zone" "root" {
 }
 
 ## Web
-resource "aws_route53_record" "www" {
+resource "aws_route53_record" "apex" {
   for_each = toset(["A", "AAAA"])
 
   zone_id = aws_route53_zone.root.zone_id
   name    = local.domain
+  type    = each.value
+
+  # https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html#routing-to-cloudfront-distribution-config
+  alias {
+    name    = aws_route53_record.www[each.key].name
+    zone_id = aws_route53_record.www[each.key].zone_id
+
+    evaluate_target_health = false
+  }
+}
+
+resource "aws_route53_record" "www" {
+  for_each = toset(["A", "AAAA"])
+
+  zone_id = aws_route53_zone.root.zone_id
+  name    = "www.${local.domain}"
   type    = each.value
 
   # https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html#routing-to-cloudfront-distribution-config
