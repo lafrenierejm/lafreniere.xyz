@@ -36,7 +36,7 @@ class Environment(Enum):
     LOCAL = "local"
 ```
 
-…and a function that performs different logic based on which environment we are in:
+And also define a function that performs different logic based on which environment we are in:
 
 ```python
 def environment_specific_logic(env: Environment) -> str:
