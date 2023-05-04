@@ -154,6 +154,7 @@ This means that _regular Python code_ can inspect and use the information from t
 
 Let's build a mock CLI to demonstrate.
 The requirements:
+
 - Mandatory environment (as defined earlier) with a default value of `LOCAL`.
 - Optional `--verbose`/`-v` flag.
 
@@ -175,9 +176,15 @@ if __name__ == "__main__":
     typer.run(main)
 ```
 
-Running that script with the (built-in) `--help` flag:
+Running that script with the Typer's built-in `--help` flag:
+
+```shell
+python -m python_static_types --help
+```
+
+…gives the following output:
+
 ```text
-$ python -m python_static_types --help
 Usage: python -m python_static_types [OPTIONS] [ENV]:[prod|dev|local]
 
 Arguments:
@@ -189,6 +196,13 @@ Options:
 ```
 
 And attempting to pass an invalid environment:
+
+```shell
+python -m python_static_types --help
+```
+
+…will display an informative error message and exit with a failure code.
+
 ```text
 $ python -m python_static_types nonexistent-env
 Usage: python -m python_static_types [OPTIONS] [ENV]:[prod|dev|local]
