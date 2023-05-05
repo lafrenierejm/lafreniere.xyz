@@ -18,7 +18,6 @@ resource "aws_route53_record" "apex" {
   name    = local.domain
   type    = each.value
 
-  # https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html#routing-to-cloudfront-distribution-config
   alias {
     name    = aws_route53_record.www[each.key].name
     zone_id = aws_route53_record.www[each.key].zone_id
@@ -36,9 +35,10 @@ resource "aws_route53_record" "www" {
 
   # https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html#routing-to-cloudfront-distribution-config
   alias {
-    name                   = aws_cloudfront_distribution.s3_distribution.domain_name
-    zone_id                = aws_cloudfront_distribution.s3_distribution.hosted_zone_id
-    evaluate_target_health = true
+    name    = aws_cloudfront_distribution.s3_distribution.domain_name
+    zone_id = aws_cloudfront_distribution.s3_distribution.hosted_zone_id
+
+    evaluate_target_health = false
   }
 }
 
@@ -331,7 +331,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   default_root_object = "index.html"
   enabled             = true
   is_ipv6_enabled     = true
-  http_version        = "http3"
+  http_version        = "http2and3"
 
   origin {
     domain_name              = aws_s3_bucket.lafreniere_xyz.bucket_regional_domain_name
