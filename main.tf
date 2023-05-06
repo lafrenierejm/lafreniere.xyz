@@ -1,6 +1,6 @@
 locals {
   domain = "lafreniere.xyz"
-  ttl    = 300 # seconds
+  ttl    = 86400 # 1 day
 }
 
 data "aws_caller_identity" "current" {}
