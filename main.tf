@@ -234,26 +234,6 @@ resource "aws_route53_hosted_zone_dnssec" "example" {
   hosted_zone_id = aws_route53_key_signing_key.lafreniere_xyz.hosted_zone_id
 }
 
-# Used to establish chain of trust for DNSSEC.
-resource "aws_route53_record" "delegation_signer" {
-  zone_id = aws_route53_zone.root.zone_id
-  name    = "www.${local.domain}"
-  type    = "DS"
-  ttl     = local.ttl
-  records = [
-    join(" ", [
-      # key tag
-      "59278",
-      # algorithm
-      "13",
-      # digest type
-      "2",
-      # digest
-      "7F0BF8377E5DE5D62FF327952C9661C03DBA9EC6D8721A55E6A3FDD5956C974E",
-    ])
-  ]
-}
-
 # S3
 resource "aws_s3_bucket" "lafreniere_xyz" {
   bucket = local.domain
