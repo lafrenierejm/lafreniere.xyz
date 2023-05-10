@@ -30,7 +30,7 @@ We will define an enum to describe those potential environments:
 ```python
 from enum import Enum
 
-class Environment(Enum):
+class Environment(str, Enum):
     PROD = "prod"
     DEV = "dev"
     LOCAL = "local"
@@ -188,7 +188,7 @@ python -m python_static_types --help
 Usage: python -m python_static_types [OPTIONS] [ENV]:[prod|dev|local]
 
 Arguments:
-  [ENV]:[prod|dev|local]  [default: Environment.LOCAL]
+  [ENV]:[prod|dev|local]  [default: local]
 
 Options:
   --verbose / --no-verbose  Enable debug logging  [default: no-verbose]
