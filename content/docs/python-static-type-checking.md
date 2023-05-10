@@ -198,13 +198,12 @@ Options:
 And attempting to pass an invalid environment:
 
 ```shell
-python -m python_static_types --help
+python -m python_static_types nonexistent-env
 ```
 
 …will display an informative error message and exit with a failure code.
 
 ```text
-$ python -m python_static_types nonexistent-env
 Usage: python -m python_static_types [OPTIONS] [ENV]:[prod|dev|local]
 Try 'python -m python_static_types --help' for help.
 
