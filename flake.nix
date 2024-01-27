@@ -1,55 +1,60 @@
 {
   description = "Source code for lafreniere.xyz";
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/nixos-22.11;
-    flake-utils.url = github:numtide/flake-utils;
+    nixpkgs.url = github:NixOS/nixpkgs/nixos-23.11;
+    flake-parts.url = github:hercules-ci/flake-parts;
+    flake-root.url = github:srid/flake-root;
     pre-commit-hooks = {
       url = github:cachix/pre-commit-hooks.nix;
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, flake-utils, pre-commit-hooks }:
-    with flake-utils.lib; eachSystem allSystems (system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-        buildInputs = with pkgs; [
-          awscli2
-          git-crypt
-          gnupg
-          hugo
-          python310
-          terraform
-        ];
-      in
-      rec {
-        checks = {
-          pre-commit-check = pre-commit-hooks.lib.${system}.run {
-            src = ./.;
-            hooks = {
-              markdownlint.enable = true;
-              nixpkgs-fmt.enable = true;
-              prettier = {
-                enable = true;
-                excludes = [ ".*\\.tfstate" ];
-              };
-              typos = {
-                enable = true;
-                excludes = [ ".*\\.tfstate" ];
-              };
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake {inherit inputs;} {
+      imports = with inputs; [
+        flake-root.flakeModule
+        pre-commit-hooks.flakeModule
+      ];
+      systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
+      perSystem = {
+        config,
+        self',
+        inputs',
+        pkgs,
+        system,
+        ...
+      }: {
+        # Pre-commit hooks.
+        pre-commit = {
+          check.enable = true;
+          settings.hooks = {
+            alejandra.enable = true;
+            prettier = {
+              enable = true;
+              excludes = ["flake\\.lock" ".*\\.tfstate"];
+            };
+            terraform-format.enable = true;
+            typos = {
+              enable = true;
+              types = ["text"];
             };
           };
         };
-        devShell = pkgs.mkShell {
-          inherit (self.checks.${system}.pre-commit-check) shellHook;
-          buildInputs = buildInputs ++ (with pkgs; [
+
+        # `nix develop`
+        devShells.default = pkgs.mkShell {
+          inputsFrom = [config.pre-commit.devShell];
+          packages = with pkgs; [
+            awscli2
             dig
-            nixfmt
-            nodePackages_latest.markdownlint-cli2
-            nodePackages_latest.prettier
+            git-crypt
+            hugo
+            (opentofu.withPlugins (p: [p.aws]))
+            python3
+            rnix-lsp
             terraform-ls
-            typos
-          ]);
+          ];
         };
-      }
-    );
+      };
+    };
 }
