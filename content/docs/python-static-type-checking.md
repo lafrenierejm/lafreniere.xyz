@@ -4,8 +4,6 @@ date: 2023-05-02T23:50:00-05:00
 draft: false
 ---
 
-<hr>
-
 {{< hint info >}}
 This post was originally written to accompany a lightning talk I gave to the engineering department at Renaissance Learning, my employer.
 All code examples in this post assume Python 3.9 or later.
