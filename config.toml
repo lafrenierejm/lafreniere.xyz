@@ -1,7 +1,7 @@
 baseURL = 'https://d19qhx4ioawdt7.cloudfront.net'
 languageCode = 'en-us'
 title = 'Joseph LaFreniere'
-
+theme = "hugo-book"
 enableGitInfo = true
 
 [params]
