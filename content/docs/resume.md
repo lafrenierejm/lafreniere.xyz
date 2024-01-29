@@ -181,6 +181,8 @@ Contributor
 
 </div>
 
+<div class="box">
+
 ### standard-dirs.el
 
 {{< columns >}}
@@ -196,7 +198,9 @@ _Standard Dirs_ is an Emacs library to provide platform-specific paths for readi
 - On Linux, the directory paths conform to the XDG base directory and XDG user directory specifications as published by the freedesktop.org project.
 - On macOS, the directory paths conform to Apple’s filesystem documentation ["Where to Put Files"](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFileSystem/Articles/WhereToPutFiles.html).
 
-<hr>
+</div>
+
+<div class="box">
 
 ### emacs-ghq
 
@@ -210,7 +214,9 @@ Maintainer
 
 _Emacs ghq_ is an Emacs utility for leveraging [ghq](https://github.com/x-motemen/ghq) to manage local repositories.
 
-<hr>
+</div>
+
+<div class="box">
 
 ### ietf-cli
 
@@ -233,7 +239,9 @@ SQLite was chosen for the database implementation due to the single-user nature 
 - Implemented subcommand-style CLI frontend using `argparse`.
 - Depended on `rsync` as an external program to fetch latest versions of the upstream IETF publications.
 
-<hr>
+</div>
+
+<div class="box">
 
 ### format-flowed.vim
 
@@ -257,3 +265,5 @@ The project started as a refactor of an existing script found in the Vim user Go
   - the effects of trailing whitespace, and
   - the behavior of tab characters.
 - Packaged the script for use with modern (at the time) Vim plugin managers.
+
+</div>
