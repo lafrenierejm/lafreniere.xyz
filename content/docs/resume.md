@@ -158,7 +158,7 @@ ripgrep-all is a CLI application that extracts textual information from non-text
 
 </div>
 
-<div class="box" style="/*! outline-width: 0.1em; */border: 1px solid var(--gray-200);border-radius: .25rem;padding-left: 1em;margin-bottom: 2ex">
+<div class="box">
 
 ### ripsecrets
 
