@@ -150,7 +150,7 @@ Contributor
 [Authored pull requests](https://github.com/phiresky/ripgrep-all/pulls?q=is%3Apr+author%3Alafrenierejm)
 {{< /columns >}}
 
-ripgrep-all is a CLI application that extracts textual information from non-text files (e.g. PDF, sqlite), caches the resulting text, and transparently runs [ripgrep](https://github.com/BurntSushi/ripgrep) on the text for performant searching.
+ripgrep-all is a CLI application that extracts textual information from non-text files (e.g. PDF, sqlite), caches the resulting text, and transparently runs [ripgrep](https://github.com/BurntSushi/ripgrep) on the text for high-performance searching.
 
 - Implemented `async` support in the Rust codebase for the [pagebreak algorithm](https://github.com/phiresky/ripgrep-all/pull/150).
 - Introduced Nix flake with [Rust library caching](https://github.com/phiresky/ripgrep-all/pull/148) and [propagated runtime dependencies](https://github.com/phiresky/ripgrep-all/pull/187).
