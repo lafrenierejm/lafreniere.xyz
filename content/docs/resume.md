@@ -127,8 +127,7 @@ Lenoir City, TN
 - Developed prototype Android app to streamline customer service requests.
   - Independently performed mockup, implementation, and testing.
 - Resolved help desk calls for approximately 75 employees across two buildings.
-- Wrote an automated uninstaller for Symantic Endpoint to cleanup failed installations and allow for successful reinstallation.
-  [Symantec Endpoint uninstaller](https://github.com/lafrenierejm/Symantec_Endpoint_Uninstall_Script).
+- Wrote and published [Symantec Endpoint uninstaller](https://github.com/lafrenierejm/Symantec_Endpoint_Uninstall_Script), a script to cleanup failed Symantec Endpoint installations sufficiently to allow for successful reinstallation.
 
 </div>
 
