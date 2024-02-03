@@ -223,7 +223,7 @@ Author
 [Source code](https://github.com/lafrenierejm/ietf-cli)
 {{< /columns >}}
 
-Wrote an alternative to the [command-line program espoused on ietf.org's wiki](https://trac.tools.ietf.org/tools/ietf-cli/), motivated by a desire for a better querying features and a cleaner codebase.
+Wrote an alternative to the [command-line program espoused on ietf.org's wiki](https://trac.tools.ietf.org/tools/ietf-cli/), motivated by a desire for better querying features and a cleaner codebase.
 My goals for the rewrite were to use then-idiomatic Python 3 and provide easy querying.
 I decided on a database backend (as opposed to the original tool's single XML file) to allow querying documents by title, author, keyword, or authoring organization.
 SQLite was chosen for the database implementation due to the single-user nature of the project and the prioritization of ease-of-installation.
