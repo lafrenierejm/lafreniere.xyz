@@ -1,5 +1,5 @@
 ---
-title: "Résumé"
+title: "Curriculum Vitae"
 date: 2016-01-29T15:30:00-05:00
 draft: false
 ---
@@ -26,8 +26,6 @@ Dallas, TX
 - Elected officer in Collegium V Honors College for 2016–17 and 17–18 academic years.
 
 </div>
-
-<hr>
 
 ## Work Experience
 
@@ -133,8 +131,6 @@ Lenoir City, TN
   [Symantec Endpoint uninstaller](https://github.com/lafrenierejm/Symantec_Endpoint_Uninstall_Script).
 
 </div>
-
-<hr>
 
 ## Open Source
 

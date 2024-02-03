@@ -1,2 +1,3 @@
 [files]
-extend-exclude = ["terraform.tfstate"]
+extend-exclude = ["terraform.tfstate", "themes/"]
+ignore-vcs = true
