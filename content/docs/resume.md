@@ -169,10 +169,10 @@ Contributor
 [Authored pull requests](https://github.com/phiresky/ripgrep-all/pulls?q=is%3Apr+author%3Alafrenierejm)
 {{< /columns >}}
 
-ripgrep-all is a CLI application that extracts textual information from non-text files (e.g. PDF, sqlite), caches the resulting text, and transparently runs [ripgrep](https://github.com/BurntSushi/ripgrep) on the text for high-performance searching.
+Command-line interface (CLI) application written in Rust that extracts textual information from non-text files (e.g. PDF, sqlite), caches the resulting text, and transparently runs [ripgrep](https://github.com/BurntSushi/ripgrep) on the text for high-performance searching.
 
 - Implemented `async` support in the Rust codebase for the [pagebreak algorithm](https://github.com/phiresky/ripgrep-all/pull/150).
-- Introduced Nix flake with [Rust library caching](https://github.com/phiresky/ripgrep-all/pull/148) and [propagated runtime dependencies](https://github.com/phiresky/ripgrep-all/pull/187).
+- Introduced Nix flake with [Rust library caching](https://github.com/phiresky/ripgrep-all/pull/148) and [propagated runtime dependencies](https://github.com/phiresky/ripgrep-all/pull/187) for efficient, reproducible builds.
 - [Updated CI workflow](https://github.com/phiresky/ripgrep-all/pull/164) to use Nix for reproducibility, resolving spurious failures that were caused by upstream changes in the CI runner.
 
 </div>
@@ -189,7 +189,9 @@ Contributor
 [Authored Pull Requests](https://github.com/sirwart/ripsecrets/pulls?q=is%3Apr+author%3Alafrenierejm)
 {{< /columns >}}
 
-- [Introduced Nix flake](https://github.com/sirwart/ripsecrets/pull/9) with Rust library caching.
+CLI application written in Rust that scans a codebase for cleartext secrets.
+
+- [Introduced Nix flake](https://github.com/sirwart/ripsecrets/pull/9) with Rust library caching for efficient, reproducible builds.
 - Added [GitHub Actions workflow](https://github.com/phiresky/ripgrep-all/tree/master/.github/workflows/ci.yml) to check for successful build and consistent formatting in CI.
 - Defined Docker image in Nix flake and [GitHub Actions workflow](https://github.com/sirwart/ripsecrets/pull/46) to publish to Docker Hub on tag.
 
@@ -207,7 +209,7 @@ Author and maintainer
 [Source code](https://github.com/lafrenierejm/standard-dirs.el)
 {{< /columns >}}
 
-_Standard Dirs_ is an Emacs library to provide platform-specific paths for reading and writing configuration, cache, and other data.
+Emacs library to provide platform-specific paths for reading and writing configuration, cache, and other data.
 
 - On Linux, the directory paths conform to the XDG base directory and XDG user directory specifications as published by the freedesktop.org project.
 - On macOS, the directory paths conform to Apple’s filesystem documentation ["Where to Put Files"](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFileSystem/Articles/WhereToPutFiles.html).
@@ -226,7 +228,7 @@ Maintainer
 [Source code](https://github.com/lafrenierejm/emacs-ghq)
 {{< /columns >}}
 
-_Emacs ghq_ is an Emacs utility for leveraging [ghq](https://github.com/x-motemen/ghq) to manage local repositories.
+Emacs utility for leveraging [ghq](https://github.com/x-motemen/ghq) to manage local repositories.
 
 </div>
 
@@ -242,7 +244,7 @@ Author
 [Source code](https://github.com/lafrenierejm/ietf-cli)
 {{< /columns >}}
 
-Wrote an alternative to the [command-line program espoused on ietf.org's wiki](https://trac.tools.ietf.org/tools/ietf-cli/), motivated by a desire for better querying features and a cleaner codebase.
+Alternative to the [command-line program espoused on ietf.org's wiki](https://trac.tools.ietf.org/tools/ietf-cli/), motivated by a desire for better querying features and a cleaner codebase.
 My goals for the rewrite were to use then-idiomatic Python 3 and provide easy querying.
 I decided on a database backend (as opposed to the original tool's single XML file) to allow querying documents by title, author, keyword, or authoring organization.
 SQLite was chosen for the database implementation due to the single-user nature of the project and the prioritization of ease-of-installation.
