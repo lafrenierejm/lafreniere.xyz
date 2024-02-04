@@ -48,6 +48,25 @@ Full-Time Remote
 
 {{< /details >}}
 
+- Leading the department's migration from a self-hosted GitHub Enterprise (GHE) Server instance to GHE Cloud.
+- Completed the migration of Subversion (SVN) repositories to Git and shutdown the SVN server.
+  - The migration from SVN to Git had been started about 6 years prior, but was never fully completed due to the size of several of the repositories (largest had 198k commits and was 80GiB on disk).
+  - Used a combination of [`svndumpsanitizer`](https://github.com/dsuni/svndumpsanitizer) and the [BFG](https://rtyley.github.io/bfg-repo-cleaner/) to split up SVN monorepos into multiple Git repositories.
+- Led the department's migration from a self-hosted JFrog Artifactory instance to AWS CodeArtifact.
+  - All existing data from Artifactory was retained.
+  - To minimize disruption to development teams, we implemented dual-publishing in the central build library during the transition phase.
+- Led the team's upgrade of multiple Jenkins instances from 1.2 to 2.361.4 (latest LTS release at time of upgrade).
+  - Downtime was approximately 15 minutes per instance.
+  - All data was retained, including build history and console logs.
+- Contributed significantly to both the design and implementation of a continuous delivery (CD) system for the department's customer-facing SAAS products.
+  - Played a key role in adding support for deploying [AWS Lambda](https://aws.amazon.com/lambda/) functions and [CloudFront](https://aws.amazon.com/cloudfront/)-backed content.
+  - Made the case for and successfully implemented a refactor from [Flask 1](https://flask.palletsprojects.com/en/1.1.x/) to [FastAPI](https://fastapi.tiangolo.com/).
+    This had several key benefits:
+    1. Reduced the number of bugs discovered in the service's production environment due to strict schema enforcement on both requests and responses.
+    1. Increased velocity due to better static type checking.
+    1. Improved baseline performance versus Flask and opened up even more performance improvements via support for `async`.
+  - Measurably improved the performance of key endpoints by selectively replacing uses of synchronous IO libraries (namely [Requests](https://requests.readthedocs.io/en/latest/) and [botocore](https://botocore.amazonaws.com/v1/documentation/api/latest/index.html)) with asynchronous libraries ([HTTPX](https://www.python-httpx.org/) and [aiobotocore](https://github.com/aio-libs/aiobotocore), respectively).
+
 </div>
 
 <div class="box">
