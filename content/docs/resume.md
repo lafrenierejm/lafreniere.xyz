@@ -122,11 +122,11 @@ Oklahoma City, OK
 {{< /columns >}}
 
 - Collaborated with other interns to design and execute experiment to test Distributed Data Service (DDS) middleware.
-- Tasked with measuring the impact various quality of service (QoS) policies had on the performance of DDS.
-- Templated C++ source code with Python in order to generate DDS entities at production scale.
-- Automated the capture of DDS's network traffic during specific lifecycle phase with Wireshark.
+  - Tasked with measuring the impact various quality of service (QoS) policies had on the performance of DDS.
+  - Templated C++ source code with Python in order to generate DDS entities at production scale.
+  - Automated the capture of DDS's network traffic during specific lifecycle phase with Wireshark.
 - Oversaw setup and maintenance of software on isolated test network.
-- Explored policies for publishing generic configurations in a security-conscious environment.
+  - Explored policies for publishing generic configurations in a security-conscious environment.
 - Guided teammates in version control best practices.
 
 </div>
