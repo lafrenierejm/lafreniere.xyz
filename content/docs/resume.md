@@ -239,7 +239,7 @@ Emacs utility for leveraging [ghq](https://github.com/x-motemen/ghq) to manage l
 {{< columns >}}
 Author
 <--->
-2016-11--2017-01
+2017-06–2017-07
 <--->
 [Source code](https://github.com/lafrenierejm/ietf-cli)
 {{< /columns >}}
