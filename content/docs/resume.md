@@ -89,7 +89,7 @@ Plano, TX
 
 {{< /details >}}
 
-- Led development of department's Python RESTful service framework to create first-class experience for Python machine learning developers in a Spring Boot-centric ecosystem.
+- Led the development of department's Python RESTful service framework to create first-class experience for Python machine learning developers in a Spring Boot-centric ecosystem.
   The company's first customer-serving Python services were written on top of the framework.
   - Designed and implemented configuration layering system to integrate data from Spring Cloud, environment variables exposed by Docker Compose, command-line options, and YAML files.
   - Adopted existing open source libraries to perform service registration with Eureka, then incrementally rewrote the library's threading and payload serialization on an internal fork to fix stability issues.
@@ -105,7 +105,7 @@ Plano, TX
   - Wrote frontend as a SPA in Angular 4 for integration into an existing dashboard.
 - Maintained Python/Hy helper scripts to automate teams' operational activities such as SSL certificate rolling and bulk deployment of application microservices.
 - Helped application teams create and troubleshoot Jenkins pipelines, Gradle builds, and Docker Swarm container deployments.
-- Automated migration of department's chat groups from Atlassian Hipchat to Microsoft Teams.
+- Automated the migration of department's chat groups from Atlassian Hipchat to Microsoft Teams.
 
 </div>
 
