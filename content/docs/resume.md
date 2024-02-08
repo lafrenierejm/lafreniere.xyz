@@ -89,7 +89,7 @@ Plano, TX
 
 {{< /details >}}
 
-- Led the development of department's Python RESTful service framework to create first-class experience for Python machine learning developers in a Spring Boot-centric ecosystem.
+- Led the development of department's Python RESTful service framework to create a first-class experience for Python machine learning developers in a Spring Boot-centric ecosystem.
   The company's first customer-serving Python services were written on top of the framework.
   - Designed and implemented configuration layering system to integrate data from Spring Cloud, environment variables exposed by Docker Compose, command-line options, and YAML files.
   - Adopted existing open source libraries to perform service registration with Eureka, then incrementally rewrote the library's threading and payload serialization on an internal fork to fix stability issues.
