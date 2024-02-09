@@ -4,6 +4,8 @@ date: 2016-01-29T15:30:00-05:00
 draft: false
 ---
 
+<script src="/js/resume-dates.js" defer></script>
+
 <!-- Include contact info -->
 
 ## Education
@@ -15,10 +17,11 @@ draft: false
 {{< columns >}}
 University of Texas at Dallas
 <--->
-August 2014–May 2018
-<--->
 Richardson, TX
 {{< /columns >}}
+
+<span class="utd-start">August 2014</span>–<span class="utd-end">May 2018</span>
+<span id="utd-total"></span>
 
 - Presented honors capstone on implementation of new mutators in [PIT](http://pitest.org/), a Java virtual machine (JVM) bytecode-based mutation testing framework.
 - Named President of campus Linux Users Group (LUG) for 2016–17 and 17–18 academic years.
@@ -36,15 +39,16 @@ Richardson, TX
 {{< columns >}}
 DevOps Engineer
 <--->
-March 2021--Present
-<--->
 Full-Time Remote
 {{< /columns >}}
 
+<span class="ren-start">March 2021</span>--Present
+<span id="ren-total"></span>
+
 {{< details title="Title History" open=true >}}
 
-- 2022-01: Promoted to Engineer 3
-- 2021-03: Hired as Engineer 2
+- <span class="ren-start">2021-03</span>: Hired as Engineer 2
+- <span class="ren-3">2022-01</span>: Promoted to Engineer 3
 
 {{< /details >}}
 
@@ -76,16 +80,17 @@ Full-Time Remote
 {{< columns >}}
 DevOps Engineer
 <--->
-June 2018--February 2021
-<--->
 Plano, TX
 {{< /columns >}}
 
+<span class="jcp-start">2018-06</span>--<span class="jcp-end">February 2021</span>
+<span id="jcp-total"></span>
+
 {{< details title="Title History" open=true >}}
 
-- 2020-01: Promoted to Engineer 1
-- 2018-08: Promoted to Junior Engineer
-- 2018-06: Hired as Engineering Intern
+- <span class="jcp-start">2018-06</span>: Hired as Engineering Intern
+- <span class="jcp-jr">2018-08</span>: Promoted to Junior Engineer
+- <span class="jcp-1">2020-01</span>: Promoted to Engineer 1
 
 {{< /details >}}
 
@@ -116,10 +121,11 @@ Plano, TX
 {{< columns >}}
 Engineering Intern
 <--->
-Summer 2016
-<--->
 Oklahoma City, OK
 {{< /columns >}}
+
+<span class="ng-start">2016-05</span>--<span class="ng-end">2016-08</span>
+<span id="ng-total"></span>
 
 - Collaborated with other interns to design and execute experiment to test Distributed Data Service (DDS) middleware.
   - Tasked with measuring the impact various quality of service (QoS) policies had on the performance of DDS.
