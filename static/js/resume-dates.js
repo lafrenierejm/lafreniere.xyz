@@ -5,28 +5,6 @@ const dateOptions = {
 
 const today = new Date();
 
-const dates = {
-  utd: {
-    start: new Date(Date.UTC(2014, 8)),
-    end: new Date(Date.UTC(2018, 5)),
-  },
-  ren: {
-    start: new Date(Date.UTC(2021, 3)),
-    3: new Date(Date.UTC(2022, 2)),
-    end: today,
-  },
-  jcp: {
-    start: new Date(Date.UTC(2018, 6)),
-    jr: new Date(Date.UTC(2018, 8)),
-    1: new Date(Date.UTC(2020, 1)),
-    end: new Date(Date.UTC(2021, 2)),
-  },
-  ng: {
-    start: new Date(Date.UTC(2016, 5)),
-    end: new Date(Date.UTC(2016, 8)),
-  },
-};
-
 function dateDiff(start, end) {
   const _MS_PER_DAY = 1000 * 60 * 60 * 24;
 
@@ -62,15 +40,25 @@ function dateDiff(start, end) {
   return ` (${units.join(", ")})`;
 }
 
-for (let [org, orgDates] of Object.entries(dates)) {
-  for (let [event, date] of Object.entries(orgDates)) {
-    var key = [org, event].join("-");
-    for (let elem of document.getElementsByClassName(key)) {
-      elem.innerText = date.toLocaleDateString(undefined, dateOptions);
-    }
+var tenureDates = {};
+
+for (let element of document.getElementsByClassName("date")) {
+  var date;
+  if (element.innerText == "Present") {
+    date = today;
+  } else {
+    date = new Date(Date.UTC(...element.innerText.split("-")));
   }
-  var element = document.getElementById(`${org}-total`);
-  if (element) {
-    element.innerText = dateDiff(orgDates.start, orgDates.end);
+  element.innerText = date.toLocaleDateString(undefined, dateOptions);
+  tenureDates[element.id] = date;
+}
+
+for (let element of document.getElementsByClassName("tenure")) {
+  id = element.id;
+  if (id != undefined) {
+    idPrefix = element.id.split("-")[0];
   }
+  var dateStart = tenureDates[`${idPrefix}-start`];
+  var dateEnd = tenureDates[`${idPrefix}-end`];
+  element.innerText = dateDiff(dateStart, dateEnd);
 }

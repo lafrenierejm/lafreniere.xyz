@@ -20,8 +20,8 @@ University of Texas at Dallas
 Richardson, TX
 {{< /columns >}}
 
-<span class="utd-start">August 2014</span>–<span class="utd-end">May 2018</span>
-<span id="utd-total"></span>
+<span class="date" id="utd-start">2014-08</span>–<span class="date" id="utd-end">2018-05</span>
+<span class="tenure" id="utd-tenure"></span>
 
 - Presented honors capstone on implementation of new mutators in [PIT](http://pitest.org/), a Java virtual machine (JVM) bytecode-based mutation testing framework.
 - Named President of campus Linux Users Group (LUG) for 2016–17 and 17–18 academic years.
@@ -42,13 +42,13 @@ DevOps Engineer
 Full-Time Remote
 {{< /columns >}}
 
-<span class="ren-start">March 2021</span>--Present
-<span id="ren-total"></span>
+<span class="date" id="ren-start">2021-03</span>--<span class="date" id="ren-end">Present</span>
+<span class="tenure" id="ren-tenure"></span>
 
 {{< details title="Title History" open=true >}}
 
-- <span class="ren-start">2021-03</span>: Hired as Engineer 2
-- <span class="ren-3">2022-01</span>: Promoted to Engineer 3
+- <span class="date">2021-03</span>: Hired as Engineer 2
+- <span class="date">2022-01</span>: Promoted to Engineer 3
 
 {{< /details >}}
 
@@ -83,14 +83,14 @@ DevOps Engineer
 Plano, TX
 {{< /columns >}}
 
-<span class="jcp-start">2018-06</span>--<span class="jcp-end">February 2021</span>
-<span id="jcp-total"></span>
+<span class="date" id="jcp-start">2018-06</span>--<span class="date" id="jcp-end">2021-02</span>
+<span class="tenure" id="jcp-tenure"></span>
 
 {{< details title="Title History" open=true >}}
 
-- <span class="jcp-start">2018-06</span>: Hired as Engineering Intern
-- <span class="jcp-jr">2018-08</span>: Promoted to Junior Engineer
-- <span class="jcp-1">2020-01</span>: Promoted to Engineer 1
+- <span class="date">2018-06</span>: Hired as Engineering Intern
+- <span class="date">2018-08</span>: Promoted to Junior Engineer
+- <span class="date">2020-01</span>: Promoted to Engineer 1
 
 {{< /details >}}
 
@@ -124,8 +124,8 @@ Engineering Intern
 Oklahoma City, OK
 {{< /columns >}}
 
-<span class="ng-start">2016-05</span>--<span class="ng-end">2016-08</span>
-<span id="ng-total"></span>
+<span class="date" id="ng-start">2016-05</span>--<span class="date" id="ng-end">2016-08</span>
+<span class="tenure" id="ng-tenure"></span>
 
 - Collaborated with other interns to design and execute experiment to test Distributed Data Service (DDS) middleware.
   - Tasked with measuring the impact various quality of service (QoS) policies had on the performance of DDS.
@@ -144,10 +144,10 @@ Oklahoma City, OK
 {{< columns >}}
 IT Intern
 <--->
-Summers 2013–15
-<--->
 Lenoir City, TN
 {{< /columns >}}
+
+Summers 2013, 14, 15 (8 months)
 
 - Developed prototype Android app to streamline customer service requests.
   - Independently performed mockup, implementation, and testing.
@@ -170,10 +170,10 @@ See my GitHub profile, <a href="https://github.com/lafrenierejm/"><code>&#64;laf
 {{< columns >}}
 Contributor
 <--->
-2022-12--Present
-<--->
 [Authored pull requests](https://github.com/phiresky/ripgrep-all/pulls?q=is%3Apr+author%3Alafrenierejm)
 {{< /columns >}}
+
+<span class="date">2022-12</span>--Present
 
 Command-line interface (CLI) application written in Rust that extracts textual information from non-text files (e.g. PDF, sqlite), caches the resulting text, and transparently runs [ripgrep](https://github.com/BurntSushi/ripgrep) on the text for high-performance searching.
 
@@ -190,10 +190,10 @@ Command-line interface (CLI) application written in Rust that extracts textual i
 {{< columns >}}
 Contributor
 <--->
-2022-04--Present
-<--->
 [Authored Pull Requests](https://github.com/sirwart/ripsecrets/pulls?q=is%3Apr+author%3Alafrenierejm)
 {{< /columns >}}
+
+<span class="date">2022-04</span>--Present
 
 CLI application written in Rust that scans a codebase for cleartext secrets.
 
@@ -210,10 +210,10 @@ CLI application written in Rust that scans a codebase for cleartext secrets.
 {{< columns >}}
 Author and maintainer
 <--->
-2018-03--Present
-<--->
 [Source code](https://github.com/lafrenierejm/standard-dirs.el)
 {{< /columns >}}
+
+<span class="date">2018-03</span>--Present
 
 Emacs library to provide platform-specific paths for reading and writing configuration, cache, and other data.
 
@@ -229,10 +229,10 @@ Emacs library to provide platform-specific paths for reading and writing configu
 {{< columns >}}
 Maintainer
 <--->
-2023-05--Present
-<--->
 [Source code](https://github.com/lafrenierejm/emacs-ghq)
 {{< /columns >}}
+
+<span class="date">2023-05</span>--Present
 
 Emacs utility for leveraging [ghq](https://github.com/x-motemen/ghq) to manage local repositories.
 
@@ -245,10 +245,10 @@ Emacs utility for leveraging [ghq](https://github.com/x-motemen/ghq) to manage l
 {{< columns >}}
 Author
 <--->
-2017-06–2017-07
-<--->
 [Source code](https://github.com/lafrenierejm/ietf-cli)
 {{< /columns >}}
+
+<span class="date">2017-06</span>--<span class="date">2017-07</span>
 
 Alternative to the [command-line program espoused on ietf.org's wiki](https://trac.tools.ietf.org/tools/ietf-cli/), motivated by a desire for better querying features and a cleaner codebase.
 My goals for the rewrite were to use then-idiomatic Python 3 and provide easy querying.
@@ -270,10 +270,10 @@ SQLite was chosen for the database implementation due to the single-user nature 
 {{< columns >}}
 Author
 <--->
-2016-11--2017-01
-<--->
 [Source code](https://gitlab.com/lafrenierejm/vim-format-flowed)
 {{< /columns >}}
+
+<span class="date">2016-11</span>--<span class="date">2017-01</span>
 
 Wrote a Vim plugin enabling full support of [RFC 3676 _The Text/Plain Format and DelSp Parameters_](https://tools.ietf.org/html/rfc3676) in Vim's `mail` filetype.
 The plugin dynamically sets `formatoptions` and `tab` settings based on the location of the cursor in a buffer.
