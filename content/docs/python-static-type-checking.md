@@ -44,7 +44,7 @@ def environment_specific_logic(env: Environment) -> str:
         return "green"
 ```
 
-But what happens if the organization happens needs to add a fourth environment, say `STAGING`?
+But what happens if the organization needs to add a fourth environment, say `STAGING`?
 
 1. We can trivially add a new member to `Environment`.
 1. When calling `environment_specific_logic` with `Environment.STAGING`:
