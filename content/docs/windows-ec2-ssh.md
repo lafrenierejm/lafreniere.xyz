@@ -56,7 +56,7 @@ Once an AMI with the above setup has been successfully built, there are a handfu
 1. You _must_ provide a valid SSH keypair.
 2. You _must_ ensure the public half of that keypair is added to your preferred user's list of authenticated keys on startup.
 3. You should use [Instance Metadata Service version 2 (IMDSv2)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html).
-   Compared to IMDSv1, v2 offers improves security in some edge cases.
+   Compared to IMDSv1, v2 offers improved security in some edge cases.
    See the AWS Security Blog's IMDSv2 [announcement post](https://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/) for more details.
 
 Of these, dynamically adding the public key is the only step that doesn't have a dedicated option in AWS.
