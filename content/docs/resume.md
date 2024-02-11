@@ -18,7 +18,7 @@ University of Texas at Dallas
 Richardson, TX
 {{< /columns >}}
 
-<span class="date" id="utd-start">2014-08</span>–<span class="date" id="utd-end">2018-05</span>
+<span class="date" id="utd-start">2014-08-01</span>–<span class="date" id="utd-end">2018-05-31</span>
 <span class="tenure" id="utd-tenure"></span>
 
 - Presented honors capstone on implementation of new mutators in [PIT](http://pitest.org/), a Java virtual machine (JVM) bytecode-based mutation testing framework.
@@ -40,7 +40,7 @@ DevOps Engineer
 Full-Time Remote
 {{< /columns >}}
 
-<span class="date" id="ren-start">2021-03</span>--<span class="date" id="ren-end">Present</span>
+<span class="date" id="ren-start">2021-03-01</span>--<span class="date" id="ren-end">Present</span>
 <span class="tenure" id="ren-tenure"></span>
 
 {{< details title="Title History" open=true >}}
@@ -171,7 +171,8 @@ Contributor
 [Authored pull requests](https://github.com/phiresky/ripgrep-all/pulls?q=is%3Apr+author%3Alafrenierejm)
 {{< /columns >}}
 
-<span class="date">2022-12</span>--Present
+<span class="date" id="rga-start">2022-12-01</span>--<span class="date" id="rga-end">Present</span>
+<span class="tenure" id="rga-tenure"></span>
 
 Command-line interface (CLI) application written in Rust that extracts textual information from non-text files (e.g. PDF, sqlite), caches the resulting text, and transparently runs [ripgrep](https://github.com/BurntSushi/ripgrep) on the text for high-performance searching.
 
@@ -191,7 +192,8 @@ Contributor
 [Authored Pull Requests](https://github.com/sirwart/ripsecrets/pulls?q=is%3Apr+author%3Alafrenierejm)
 {{< /columns >}}
 
-<span class="date">2022-04</span>--Present
+<span class="date" id="ripsecrets-start">2022-04-01</span>--<span class="date" id="ripsecrets-end">Present</span>
+<span class="tenure" id="ripsecrets-tenure"></span>
 
 CLI application written in Rust that scans a codebase for cleartext secrets.
 
@@ -211,7 +213,8 @@ Author and maintainer
 [Source code](https://github.com/lafrenierejm/standard-dirs.el)
 {{< /columns >}}
 
-<span class="date">2018-03</span>--Present
+<span class="date" id="stddirs-start">2018-03-01</span>--<span class="date" id="stddirs-end">Present</span>
+<span class="tenure" id="stddirs-tenure"></span>
 
 Emacs library to provide platform-specific paths for reading and writing configuration, cache, and other data.
 
@@ -230,7 +233,8 @@ Maintainer
 [Source code](https://github.com/lafrenierejm/emacs-ghq)
 {{< /columns >}}
 
-<span class="date">2023-05</span>--Present
+<span class="date" id="ghq-start">2023-05-01</span>--<span class="date" id="ghq-end">Present</span>
+<span class="tenure" id="ghq-tenure"></span>
 
 Emacs utility for leveraging [ghq](https://github.com/x-motemen/ghq) to manage local repositories.
 
@@ -246,7 +250,8 @@ Author
 [Source code](https://github.com/lafrenierejm/ietf-cli)
 {{< /columns >}}
 
-<span class="date">2017-06</span>--<span class="date">2017-07</span>
+<span class="date" id="ietf-start">2017-06-01</span>--<span class="date" id="ietf-end">2017-07-31</span>
+<span class="tenure" id="ietf-tenure"></span>
 
 Alternative to the [command-line program espoused on ietf.org's wiki](https://trac.tools.ietf.org/tools/ietf-cli/), motivated by a desire for better querying features and a cleaner codebase.
 My goals for the rewrite were to use then-idiomatic Python 3 and provide easy querying.
@@ -271,7 +276,8 @@ Author
 [Source code](https://gitlab.com/lafrenierejm/vim-format-flowed)
 {{< /columns >}}
 
-<span class="date">2016-11</span>--<span class="date">2017-01</span>
+<span class="date" id="fflowed-start">2016-11-01</span>--<span class="date" id="fflowed-end">2017-01-31</span>
+<span class="tenure" id="fflowed-tenure"></span>
 
 Wrote a Vim plugin enabling full support of [RFC 3676 _The Text/Plain Format and DelSp Parameters_](https://tools.ietf.org/html/rfc3676) in Vim's `mail` filetype.
 The plugin dynamically sets `formatoptions` and `tab` settings based on the location of the cursor in a buffer.
