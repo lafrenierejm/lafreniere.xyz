@@ -22,7 +22,7 @@ All code examples in this post assume Python 3.9 or later.
 Exhaustiveness checking means that the type checker guarantees that all possible cases are accounted for.
 In my experience, this is most useful when used in combination with enumerator (enum) classes.
 
-Lets say we have an static set of environments our code could be running in.
+Let's say we have an static set of environments our code could be running in.
 We will define an enum to describe those potential environments:
 
 ```python
@@ -78,7 +78,7 @@ Even better, the type checker would be able to tell us that it's the `STAGING` m
 
 ## Function Overloading
 
-Often the we will want to have a single function that supports multiple, distinct combinations of types.
+Often, we will want to have a single function that supports multiple, distinct combinations of types.
 For a motivating example, let's build on the above example of multiple environments and add a few additional caveats:
 
 - Assume the environments run in AWS and each environment resides in its own account.
