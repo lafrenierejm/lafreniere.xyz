@@ -46,7 +46,8 @@ Full-Time Remote
 {{< details title="Title History" open=true >}}
 
 - <span class="date">2021-03</span>: Hired as Engineer 2
-- <span class="date">2022-01</span>: Promoted to Engineer 3
+- <span class="date">2022-02</span>: Promoted to Engineer 3
+- <span class="date">2024-02-05</span>: Promoted to Senior Engineer
 
 {{< /details >}}
 
