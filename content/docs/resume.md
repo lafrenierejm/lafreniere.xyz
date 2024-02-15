@@ -18,7 +18,7 @@ University of Texas at Dallas
 Richardson, TX
 {{< /columns >}}
 
-<span class="date" id="utd-start">2014-08-01</span>–<span class="date" id="utd-end">2018-05-31</span>
+<span class="date" id="utd-start">2014-08-25T08:00:00-06:00</span>–<span class="date" id="utd-end">2018-05-10T08:00:00-06:00</span>
 <span class="tenure" id="utd-tenure"></span>
 
 - Presented honors capstone on implementation of new mutators in [PIT](http://pitest.org/), a Java virtual machine (JVM) bytecode-based mutation testing framework.
