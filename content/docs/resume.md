@@ -40,14 +40,14 @@ DevOps Engineer
 Full-Time Remote
 {{< /columns >}}
 
-<span class="date" id="ren-start">2021-03-01</span>--<span class="date" id="ren-end">Present</span>
+<span class="date" id="ren-start">2021-03-01T08:00:00-05:00</span>--<span class="date" id="ren-end">Present</span>
 <span class="tenure" id="ren-tenure"></span>
 
 {{< details title="Title History" open=true >}}
 
-- <span class="date">2021-03</span>: Hired as Engineer 2
-- <span class="date">2022-02</span>: Promoted to Engineer 3
-- <span class="date">2024-02-05</span>: Promoted to Senior Engineer
+- <span class="date">2021-03-01T08:00:00-06:00</span>: Hired as Engineer 2
+- <span class="date">2022-01-24T08:00:00-06:00</span>: Promoted to Engineer 3
+- <span class="date">2024-02-05T08:00:00-06:00</span>: Promoted to Senior Engineer
 
 {{< /details >}}
 
