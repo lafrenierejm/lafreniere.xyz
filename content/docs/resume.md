@@ -82,7 +82,7 @@ DevOps Engineer
 Plano, TX
 {{< /columns >}}
 
-<span class="date" id="jcp-start">2018-06</span>--<span class="date" id="jcp-end">2021-02</span>
+<span class="date" id="jcp-start">2018-06-12T08:00:00-05:00</span>--<span class="date" id="jcp-end">2021-02-26T17:00-06:00</span>
 <span class="tenure" id="jcp-tenure"></span>
 
 {{< details title="Title History" open=true >}}
