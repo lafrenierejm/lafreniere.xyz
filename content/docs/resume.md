@@ -1,5 +1,6 @@
 ---
 title: "Curriculum Vitae"
+subtitle: "Joseph LaFreniere"
 date: 2016-01-29T15:30:00-05:00
 draft: false
 ---
