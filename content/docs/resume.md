@@ -163,7 +163,7 @@ The contributions listed here are _not_ exhaustive.
 See my GitHub profile, <a href="https://github.com/lafrenierejm/"><code>&#64;lafrenierejm</code></a>, for a more comprehensive list of recent contributions.
 {{< /hint >}}
 
-<div class="box" style="/*! outline-width: 0.1em; */border: 1px solid var(--gray-200);border-radius: .25rem;padding-left: 1em;margin-bottom: 1ex">
+<div class="box">
 
 ### ripgrep-all
 
