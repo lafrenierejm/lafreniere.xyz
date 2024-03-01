@@ -67,7 +67,7 @@ Full-Time Remote
   - Made the case for and successfully implemented a refactor from [Flask 1](https://flask.palletsprojects.com/en/1.1.x/) to [FastAPI](https://fastapi.tiangolo.com/).
     This had several key benefits:
     1. Reduced the number of bugs discovered in the service's production environment due to strict schema enforcement on both requests and responses.
-    1. Increased velocity due to better static type checking.
+    1. Increased development velocity due to better static type checking.
     1. Improved baseline performance versus Flask and opened up even more performance improvements via support for `async`.
   - Measurably improved the performance of key endpoints by selectively replacing uses of synchronous IO libraries (namely [Requests](https://requests.readthedocs.io/en/latest/) and [botocore](https://botocore.amazonaws.com/v1/documentation/api/latest/index.html)) with asynchronous libraries ([HTTPX](https://www.python-httpx.org/) and [aiobotocore](https://github.com/aio-libs/aiobotocore), respectively).
 
