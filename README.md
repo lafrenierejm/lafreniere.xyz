@@ -9,3 +9,7 @@ Source code is provided under the terms of the [ISC License](https://opensource.
 
 1. `tofu plan -out tf.out`
 1. `tofu apply tf.out`
+
+## Publishing Content
+
+1. `./publish.py`
