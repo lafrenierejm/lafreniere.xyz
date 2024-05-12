@@ -53,9 +53,12 @@ Full-Time Remote
 {{< /details >}}
 
 - Leading the department's migration from a self-hosted GitHub Enterprise (GHE) Server instance to GHE Cloud.
-- Completed the migration of Subversion (SVN) repositories to Git and shutdown the SVN server.
+- Picked up and completed a years-long migration of Subversion (SVN) repositories to Git that had stalled.
   - The migration from SVN to Git had been started about 6 years prior, but was never fully completed due to the size of several of the repositories (largest had 198k commits and was 80GiB on disk).
+  - Created snapshots of all SVN repositories and stored them in S3 for potential data-recovery needs.
+  - Worked across teams to identify which remaining SVN repositories were still relevant.
   - Used a combination of [`svndumpsanitizer`](https://github.com/dsuni/svndumpsanitizer) and the [BFG](https://rtyley.github.io/bfg-repo-cleaner/) to split up SVN monorepos into multiple Git repositories.
+  - Shutdown the SVN server completely after receiving signoff from all involved teams.
 - Led the department's migration from a self-hosted JFrog Artifactory instance to AWS CodeArtifact.
   - All existing data from Artifactory was retained.
   - To minimize disruption to development teams, we implemented dual-publishing in the central build library during the transition phase.
