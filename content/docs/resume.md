@@ -52,6 +52,7 @@ Full-Time Remote
 
 {{< /details >}}
 
+- Leading a cross-department effort to create a pool of centralized, self-hosted GitHub Actions (GHA) runners and onboard teams.
 - Leading the department's migration from a self-hosted GitHub Enterprise (GHE) Server instance to GHE Cloud.
 - Picked up and completed a years-long migration of Subversion (SVN) repositories to Git that had stalled.
   - The migration from SVN to Git had been started about 6 years prior, but was never fully completed due to the size of several of the repositories (largest had 198k commits and was 80GiB on disk).
