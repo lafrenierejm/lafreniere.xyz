@@ -169,6 +169,26 @@ See my GitHub profile, <a href="https://github.com/lafrenierejm/"><code>&#64;laf
 
 <div class="box">
 
+### gron
+
+{{< columns >}}
+Fork author
+<--->
+[Changes relative to upstream](https://github.com/tomnomnom/gron/compare/master...lafrenierejm:gron:master)
+{{< /columns >}}
+
+<span class="date" id="gron-start">2023-07-06</span>--<span class="date" id="gron-end">Present</span>
+<span class="tenure" id="ripsecrets-tenure"></span>
+
+CLI application written in Go that flattens JSON and YAML to make it easily greppable.
+
+- Replaced stdlib's `encoding/json` package with a third-party package in order to [optionally retain key order](https://github.com/lafrenierejm/gron/commit/8fa7e0d49fa4dd13c5732edc587ca12d65894924) of input JSON.
+- [Rewrote CLI entrypoint using Cobra](https://github.com/lafrenierejm/gron/commit/60996c48591c6e431b14d8078ead2eedfeac7abd) to standardize formatting of help text.
+
+</div>
+
+<div class="box">
+
 ### ripgrep-all
 
 {{< columns >}}
