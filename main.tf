@@ -99,6 +99,17 @@ resource "aws_route53_record" "domainkey" {
   ]
 }
 
+## ENS
+resource "aws_route53_record" "ens" {
+  zone_id = aws_route53_zone.root.zone_id
+  name    = "@"
+  type    = "TXT"
+  ttl     = local.ttl
+  records = [
+    "ENS1 dnsname.ens.eth 0xc13ED920b46e2a765c22abAd6e401fbeB213B85A",
+  ]
+}
+
 # Certificate
 resource "aws_acm_certificate" "lafreniere_xyz" {
   domain_name               = local.domain
