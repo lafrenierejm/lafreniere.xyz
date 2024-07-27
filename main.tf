@@ -10,6 +10,21 @@ resource "aws_route53_zone" "root" {
   name = local.domain
 }
 
+## Route53 only permits one TXT resource, so we need to put all values in it.
+resource "aws_route53_record" "txt" {
+  zone_id = aws_route53_zone.root.zone_id
+  name    = aws_route53_zone.root.name
+  type    = "TXT"
+  ttl     = local.ttl
+  records = [
+    # sender policy framework (SPF)
+    "v=spf1 include:spf.messagingengine.com ?all",
+
+    # Ethereum Name Service (ENS)
+    "ENS1 dnsname.ens.eth 0xc13ED920b46e2a765c22abAd6e401fbeB213B85A",
+  ]
+}
+
 ## Web
 resource "aws_route53_record" "apex" {
   for_each = toset(["A", "AAAA"])
@@ -74,17 +89,6 @@ resource "aws_route53_record" "submission" {
   ]
 }
 
-## SPF
-resource "aws_route53_record" "spf_txt" {
-  zone_id = aws_route53_zone.root.zone_id
-  name    = aws_route53_zone.root.name
-  type    = "TXT"
-  ttl     = local.ttl
-  records = [
-    "v=spf1 include:spf.messagingengine.com ?all"
-  ]
-}
-
 ## DKIM
 resource "aws_route53_record" "domainkey" {
   count = 3
@@ -96,17 +100,6 @@ resource "aws_route53_record" "domainkey" {
 
   records = [
     "fm${count.index + 1}.${aws_route53_zone.root.name}.dkim.fmhosted.com."
-  ]
-}
-
-## ENS
-resource "aws_route53_record" "ens" {
-  zone_id = aws_route53_zone.root.zone_id
-  name    = "@"
-  type    = "TXT"
-  ttl     = local.ttl
-  records = [
-    "ENS1 dnsname.ens.eth 0xc13ED920b46e2a765c22abAd6e401fbeB213B85A",
   ]
 }
 
