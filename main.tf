@@ -119,16 +119,6 @@ resource "aws_route53_record" "srv" {
   ]
 }
 
-moved {
-  from = aws_route53_record.imaps
-  to   = aws_route53_record.srv["imaps"]
-}
-
-moved {
-  from = aws_route53_record.submission
-  to   = aws_route53_record.srv["submission"]
-}
-
 resource "aws_route53_record" "domainkey" {
   count = 3
 
