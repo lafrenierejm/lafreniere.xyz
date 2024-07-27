@@ -58,6 +58,7 @@ resource "aws_route53_record" "www" {
 }
 
 ## Mail
+## https://www.fastmail.help/hc/en-us/articles/360060591153-Manual-DNS-configuration
 resource "aws_route53_record" "mx" {
   zone_id = aws_route53_zone.root.zone_id
   name    = aws_route53_zone.root.name
@@ -69,27 +70,65 @@ resource "aws_route53_record" "mx" {
   ]
 }
 
-resource "aws_route53_record" "imaps" {
+resource "aws_route53_record" "srv" {
+  for_each = {
+    submission = {
+      priority = 0
+      weight   = 1
+      port     = 587
+      target   = "smtp.fastmail.com"
+    }
+    imap = {
+      priority = 0
+      weight   = 0
+      port     = 0
+      target   = "."
+    }
+    imaps = {
+      priority = 0
+      weight   = 1
+      port     = 993
+      target   = "imap.fastmail.com"
+    }
+    pop3 = {
+      priority = 0
+      weight   = 0
+      port     = 0
+      target   = "."
+    }
+    pop3s = {
+      priority = 10
+      weight   = 1
+      port     = 995
+      target   = "pop.fastmail.com"
+    }
+    jmap = {
+      priority = 0
+      weight   = 1
+      port     = 443
+      target   = "api.fastmail.com"
+    }
+  }
+
   zone_id = aws_route53_zone.root.zone_id
-  name    = "_imaps._tcp.${aws_route53_zone.root.name}"
+  name    = "_${each.key}._tcp.${aws_route53_zone.root.name}"
   type    = "SRV"
   ttl     = local.ttl
   records = [
-    "0 1 993 imap.fastmail.com."
+    join(" ", [each.value.priority, each.value.weight, each.value.port, each.value.target])
   ]
 }
 
-resource "aws_route53_record" "submission" {
-  zone_id = aws_route53_zone.root.zone_id
-  name    = "_submission._tcp.${aws_route53_zone.root.name}"
-  type    = "SRV"
-  ttl     = local.ttl
-  records = [
-    "0 1 587 smtp.fastmail.com."
-  ]
+moved {
+  from = aws_route53_record.imaps
+  to   = aws_route53_record.srv["imaps"]
 }
 
-## DKIM
+moved {
+  from = aws_route53_record.submission
+  to   = aws_route53_record.srv["submission"]
+}
+
 resource "aws_route53_record" "domainkey" {
   count = 3
 
