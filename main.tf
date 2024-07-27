@@ -10,7 +10,7 @@ resource "aws_route53_zone" "root" {
   name = local.domain
 }
 
-## Route53 only permits one TXT resource, so we need to put all values in it.
+## Route53 only permits one TXT resource per name, so we need to put all values in it.
 resource "aws_route53_record" "txt" {
   zone_id = aws_route53_zone.root.zone_id
   name    = aws_route53_zone.root.name
@@ -130,6 +130,14 @@ resource "aws_route53_record" "domainkey" {
   records = [
     "fm${count.index + 1}.${aws_route53_zone.root.name}.dkim.fmhosted.com."
   ]
+}
+
+resource "aws_route53_record" "dmarc" {
+  zone_id = aws_route53_zone.root.zone_id
+  name    = "_dmarc.${aws_route53_zone.root.name}"
+  type    = "TXT"
+  ttl     = local.ttl
+  records = ["v=DMARC1; p=none;"]
 }
 
 # Certificate
