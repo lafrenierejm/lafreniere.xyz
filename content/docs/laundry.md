@@ -4,14 +4,15 @@ date: 2024-06-09T18:00:00
 draft: false
 ---
 
-| Fabric/Article      | Additive  | Water Temperature | Wash            | Drying    |
-| ------------------- | --------- | ----------------- | --------------- | --------- |
-| silk                | hand soap | tap cold          | hand            | hang      |
-| wool                | wool soap | tap cold          | hand            | flat      |
-| undergarment        | vinegar   | tap cold          | delicate in bag | hang      |
-| rayon               | vinegar   | tap cold          | delicate        | hang      |
-| knit                | vinegar   | tap cold          | delicate        | flat      |
-| denim               | ammonia   | tap cold          | normal          | hang      |
-| clothes             | ammonia   | cold              | normal          | low heat  |
-| color sheets/towels | ammonia   | hot               | heavy           | high heat |
-| white sheets/towels | bleach    | hot               | heavy           | high heat |
+| Fabric/Article      | Cycle               | Cleaning Solution   | Water Temperature | Drying      |
+| ------------------- | ------------------- | ------------------- | ----------------- | ----------- |
+| silk                | hand                | hand soap           | tap cold          | hang        |
+| wool                | hand                | wool soap           | tap cold          | flat        |
+| undergarment        | delicate in bag     | detergent + vinegar | tap cold          | hang        |
+| rayon               | delicate            | detergent + vinegar | tap cold          | hang        |
+| knit                | delicate            | detergent + vinegar | tap cold          | flat        |
+| cotton/denim        | normal              | detergent + ammonia | tap cold          | hang        |
+| polyester           | normal              | detergent + ammonia | cold              | tumble low  |
+| color sheets/towels | heavy               | detergent + ammonia | hot               | tumble high |
+| white sheets/towels | heavy               | detergent + bleach  | hot               | tumble high |
+| foam pillow         | spray with diffuser | isopropyl alcohol   |                   | flat        |
