@@ -14,6 +14,7 @@ Some of my online profiles include:
 <li><a href="https://gitlab.com/lafrenierejm/"><code>&#64;lafrenierejm</code> on GitLab</a></li>
 <li><a href="https://sr.ht/~lafrenierejm/"><code>~lafrenierejm</code> on sourcehut</a></li>
 <li><a rel="me" href="https://hachyderm.io/@lafrenierejm"><code>&#64;lafrenierejm</code> on Mastodon</a></li>
+<li><a href="https://keybase.io/lafrenierejm"><code>&#64;lafrenierejm</code> on keybase.io</a>
 </ul>
 
 ## About This Site
