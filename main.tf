@@ -24,7 +24,7 @@ resource "aws_route53_record" "txt" {
     "ENS1 dnsname.ens.eth 0xc13ED920b46e2a765c22abAd6e401fbeB213B85A",
 
     # keybase.io
-    "keybase-site-verification=6qll3zXk06SsUPzP9rAe8ivF3jl1MzXtavjd94vUcII",
+    "keybase-site-verification=aai0lxRjAYew5Rn1DCmrPGwvvclNHGqgCpf992HEp1k",
   ]
 }
 
