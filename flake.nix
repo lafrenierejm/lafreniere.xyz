@@ -31,7 +31,7 @@
             alejandra.enable = true;
             prettier = {
               enable = true;
-              excludes = ["flake\\.lock" ".*\\.tfstate"];
+              files = "\\.(md|html|js|json)$";
             };
             terraform-format.enable = true;
             typos = {

@@ -1,3 +1,6 @@
 [files]
 extend-exclude = ["terraform.tfstate", "themes/"]
 ignore-vcs = true
+
+[default.extend-identifiers]
+LE25BA = "LE25BA"
