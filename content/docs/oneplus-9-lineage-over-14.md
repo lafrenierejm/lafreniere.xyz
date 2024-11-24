@@ -5,18 +5,18 @@ draft: false
 ---
 
 This post enumerates the process I followed to install LineageOS 21 on an unlocked, North American OnePlus 9 (model LE2115) running OxygenOS 14.
-When I performed this update, LineageOS explicitly _only_ supported installation on OnePlus 9 models running Android 13;
-that meant I needed to first downgrade the phone from OxygenOS 14 to 13.
+When I performed this installation, LineageOS explicitly _only_ supported installation over Android 13.
 Downgrading proved much more complicated than I expected, so I wrote this post to document the successful path I eventually found.
 
-{{< hint info >}}
+## Requirements
+
 Before you begin, you will need:
 
-1. OnePlus 9 (LE2115)
+1. Physical access to and full privileges on a OnePlus 9
 1. Physical access to and admin privileges on a Windows 10+ box
 1. USB-C cable capable of data transfer
 
-{{< /hint >}}
+## Steps
 
 1. Copy the downloaded stock ROM to your computer via `adb pull /sdcard/$rom_zip` where `$rom_zip` is the name of the downloaded ROM file.
    For example, `adb pull /sdcard/2937d9d6e8a03973c33443f809287435e44858b8.zip`.
@@ -78,3 +78,5 @@ Before you begin, you will need:
    1. Check for updates.
    1. Choose the discovered OxygenOS 13 ROM.
    1. Follow the normal OS upgrade process.
+
+You are now ready to install LineageOS 21 via the normal installation guide!
