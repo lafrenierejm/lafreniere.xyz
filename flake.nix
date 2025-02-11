@@ -37,6 +37,7 @@
             typos = {
               enable = true;
               types = ["text"];
+              excludes = ["terraform.tfstate"];
             };
           };
         };
