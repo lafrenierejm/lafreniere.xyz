@@ -13,11 +13,11 @@ draft: false
 
 ### BSc in Software Engineering with Honors
 
-{{< columns >}}
+{{% columns %}}
 University of Texas at Dallas
 <--->
 Richardson, TX
-{{< /columns >}}
+{{% /columns %}}
 
 <span class="date" id="utd-start">2014-08-25T08:00:00-06:00</span>–<span class="date" id="utd-end">2018-05-10T08:00:00-06:00</span>
 <span class="tenure" id="utd-tenure"></span>
@@ -35,22 +35,22 @@ Richardson, TX
 
 ### Renaissance Learning
 
-{{< columns >}}
+{{% columns %}}
 DevOps Engineer
 <--->
 Full-Time Remote
-{{< /columns >}}
+{{% /columns %}}
 
 <span class="date" id="ren-start">2021-02-22T08:00:00-05:00</span>--<span class="date" id="ren-end">Present</span>
 <span class="tenure" id="ren-tenure"></span>
 
-{{< details title="Title History" open=true >}}
+{{% details title="Title History" open=true %}}
 
 - <span class="date">2021-02-22T08:00:00-06:00</span>: Hired as Engineer 2
 - <span class="date">2022-01-24T08:00:00-06:00</span>: Promoted to Engineer 3
 - <span class="date">2024-02-05T08:00:00-06:00</span>: Promoted to Senior Engineer
 
-{{< /details >}}
+{{% /details %}}
 
 - Lead a cross-department effort to create a pool of centralized, self-hosted GitHub Actions (GHA) runners and onboard teams.
 - Lead the department's migration from a self-hosted GitHub Enterprise (GHE) Server instance to GHE Cloud.
@@ -81,22 +81,22 @@ Full-Time Remote
 
 ### J. C. Penney
 
-{{< columns >}}
+{{% columns %}}
 DevOps Engineer
 <--->
 Plano, TX
-{{< /columns >}}
+{{% /columns %}}
 
 <span class="date" id="jcp-start">2018-06-12T08:00:00-05:00</span>--<span class="date" id="jcp-end">2021-02-19T17:00-06:00</span>
 <span class="tenure" id="jcp-tenure"></span>
 
-{{< details title="Title History" open=true >}}
+{{% details title="Title History" open=true %}}
 
 - <span class="date">2018-06</span>: Hired as Engineering Intern
 - <span class="date">2018-08</span>: Promoted to Junior Engineer
 - <span class="date">2020-01</span>: Promoted to Engineer 1
 
-{{< /details >}}
+{{% /details %}}
 
 - Led the development of department's Python RESTful service framework to create a first-class experience for Python machine learning developers in a Spring Boot-centric ecosystem.
   The company's first customer-serving Python services were written on top of the framework.
@@ -122,11 +122,11 @@ Plano, TX
 
 ### Northrop Grumman
 
-{{< columns >}}
+{{% columns %}}
 Engineering Intern
 <--->
 Oklahoma City, OK
-{{< /columns >}}
+{{% /columns %}}
 
 <span class="date" id="ng-start">2016-05</span>--<span class="date" id="ng-end">2016-08</span>
 <span class="tenure" id="ng-tenure"></span>
@@ -145,11 +145,11 @@ Oklahoma City, OK
 
 ### Lenoir City Utilities Board
 
-{{< columns >}}
+{{% columns %}}
 IT Intern
 <--->
 Lenoir City, TN
-{{< /columns >}}
+{{% /columns %}}
 
 Summers 2013, 14, 15 (8 months)
 
@@ -162,20 +162,20 @@ Summers 2013, 14, 15 (8 months)
 
 ## Open Source
 
-{{< hint warning >}}
+{{% hint warning %}}
 The contributions listed here are _not_ exhaustive.
-See my GitHub profile, <a href="https://github.com/lafrenierejm/"><code>&#64;lafrenierejm</code></a>, for a more comprehensive list of recent contributions.
-{{< /hint >}}
+See my GitHub profile, [@lafrenierejm](https://github.com/lafrenierejm/), for a more comprehensive list of recent contributions.
+{{% /hint %}}
 
 <div class="box">
 
 ### gron
 
-{{< columns >}}
+{{% columns %}}
 Fork author
 <--->
 [Changes relative to upstream](https://github.com/tomnomnom/gron/compare/master...lafrenierejm:gron:master)
-{{< /columns >}}
+{{% /columns %}}
 
 <span class="date" id="gron-start">2023-07-06</span>--<span class="date" id="gron-end">Present</span>
 <span class="tenure" id="ripsecrets-tenure"></span>
@@ -191,11 +191,11 @@ CLI application written in Go that flattens JSON and YAML to make it easily grep
 
 ### ripgrep-all
 
-{{< columns >}}
+{{% columns %}}
 Contributor
 <--->
 [Authored pull requests](https://github.com/phiresky/ripgrep-all/pulls?q=is%3Apr+author%3Alafrenierejm)
-{{< /columns >}}
+{{% /columns %}}
 
 <span class="date" id="rga-start">2022-12-01</span>--<span class="date" id="rga-end">Present</span>
 <span class="tenure" id="rga-tenure"></span>
@@ -212,11 +212,11 @@ Command-line interface (CLI) application written in Rust that extracts textual i
 
 ### ripsecrets
 
-{{< columns >}}
+{{% columns %}}
 Contributor
 <--->
 [Authored Pull Requests](https://github.com/sirwart/ripsecrets/pulls?q=is%3Apr+author%3Alafrenierejm)
-{{< /columns >}}
+{{% /columns %}}
 
 <span class="date" id="ripsecrets-start">2022-04-01</span>--<span class="date" id="ripsecrets-end">Present</span>
 <span class="tenure" id="ripsecrets-tenure"></span>
@@ -233,11 +233,11 @@ CLI application written in Rust that scans a codebase for cleartext secrets.
 
 ### standard-dirs.el
 
-{{< columns >}}
+{{% columns %}}
 Author and maintainer
 <--->
 [Source code](https://github.com/lafrenierejm/standard-dirs.el)
-{{< /columns >}}
+{{% /columns %}}
 
 <span class="date" id="stddirs-start">2018-03-01</span>--<span class="date" id="stddirs-end">Present</span>
 <span class="tenure" id="stddirs-tenure"></span>
@@ -253,11 +253,11 @@ Emacs library to provide platform-specific paths for reading and writing configu
 
 ### emacs-ghq
 
-{{< columns >}}
+{{% columns %}}
 Maintainer
 <--->
 [Source code](https://github.com/lafrenierejm/emacs-ghq)
-{{< /columns >}}
+{{% /columns %}}
 
 <span class="date" id="ghq-start">2023-05-01</span>--<span class="date" id="ghq-end">Present</span>
 <span class="tenure" id="ghq-tenure"></span>
@@ -270,11 +270,11 @@ Emacs utility for leveraging [ghq](https://github.com/x-motemen/ghq) to manage l
 
 ### ietf-cli
 
-{{< columns >}}
+{{% columns %}}
 Author
 <--->
 [Source code](https://github.com/lafrenierejm/ietf-cli)
-{{< /columns >}}
+{{% /columns %}}
 
 <span class="date" id="ietf-start">2017-06-01</span>--<span class="date" id="ietf-end">2017-07-31</span>
 <span class="tenure" id="ietf-tenure"></span>
@@ -296,11 +296,11 @@ SQLite was chosen for the database implementation due to the single-user nature 
 
 ### format-flowed.vim
 
-{{< columns >}}
+{{% columns %}}
 Author
 <--->
 [Source code](https://gitlab.com/lafrenierejm/vim-format-flowed)
-{{< /columns >}}
+{{% /columns %}}
 
 <span class="date" id="fflowed-start">2016-11-01</span>--<span class="date" id="fflowed-end">2017-01-31</span>
 <span class="tenure" id="fflowed-tenure"></span>
