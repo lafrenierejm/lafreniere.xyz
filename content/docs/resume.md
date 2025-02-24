@@ -11,16 +11,22 @@ draft: false
 
 <div class="box">
 
-### BSc in Software Engineering with Honors
-
 {{% columns %}}
-University of Texas at Dallas
+
+### University of Texas at Dallas
+
 <--->
 Richardson, TX
 {{% /columns %}}
 
+{{% columns %}}
+
+#### BSc in Software Engineering with Honors
+
+<--->
 <span class="date" id="utd-start">2014-08-25T08:00:00-06:00</span>–<span class="date" id="utd-end">2018-05-10T08:00:00-06:00</span>
 <span class="tenure" id="utd-tenure"></span>
+{{% /columns %}}
 
 - Presented honors capstone on implementation of new mutators in [PIT](http://pitest.org/), a Java virtual machine (JVM) bytecode-based mutation testing framework.
 - Named President of campus Linux Users Group (LUG) for 2016–17 and 17–18 academic years.
@@ -33,33 +39,48 @@ Richardson, TX
 
 <div class="box">
 
+{{% columns %}}
+
 ### Renaissance Learning
 
-{{% columns %}}
-DevOps Engineer
 <--->
-Full-Time Remote
+Remote
 {{% /columns %}}
 
+{{% columns %}}
+
+#### Site Reliability Engineer
+
+<--->
 <span class="date" id="ren-start">2021-02-22T08:00:00-05:00</span>--<span class="date" id="ren-end">Present</span>
 <span class="tenure" id="ren-tenure"></span>
+{{% /columns %}}
 
 {{% details title="Title History" open=true %}}
 
-- <span class="date">2021-02-22T08:00:00-06:00</span>: Hired as Engineer 2
-- <span class="date">2022-01-24T08:00:00-06:00</span>: Promoted to Engineer 3
-- <span class="date">2024-02-05T08:00:00-06:00</span>: Promoted to Senior Engineer
+{{< columns >}}
+Site Reliability Engineer Senior
+<--->
+<span class="date" id="ren_sr-start">2024-02-05T08:00:00-06:00</span>--<span class="date" id="ren_sr-end">Present</span>
+<span class="tenure" id="ren_sr-tenure"></span>
+{{< /columns >}}
+
+{{< columns >}}
+Site Reliability Engineer 3
+<--->
+<span class="date" id="ren_3-start">2022-01-24T08:00:00-06:00</span>--<span class="date" id="ren_3-end">2024-02-05T08:00:00-06:00</span>
+<span class="tenure" id="ren_3-tenure"></span>
+{{< /columns >}}
+
+{{< columns >}}
+Build and Release Engineer 2
+<--->
+<span class="date" id="ren_2-start">2021-02-22T08:00:00-06:00</span>--<span class="date" id="ren_2-end">2022-01-24T08:00:00-06:00</span>
+<span class="tenure" id="ren_2-tenure"></span>
+{{< /columns >}}
 
 {{% /details %}}
 
-- Lead a cross-department effort to create a pool of centralized, self-hosted GitHub Actions (GHA) runners and onboard teams.
-- Lead the department's migration from a self-hosted GitHub Enterprise (GHE) Server instance to GHE Cloud.
-- Picked up and completed a years-long migration of Subversion (SVN) repositories to Git that had stalled.
-  - The migration from SVN to Git had been started about 6 years prior, but was never fully completed due to the size of several of the repositories (largest had 198k commits and was 80GiB on disk).
-  - Created snapshots of all SVN repositories and stored them in S3 for potential data-recovery needs.
-  - Worked across teams to identify which remaining SVN repositories were still relevant.
-  - Used a combination of [`svndumpsanitizer`](https://github.com/dsuni/svndumpsanitizer) and the [BFG](https://rtyley.github.io/bfg-repo-cleaner/) to split up SVN monorepos into multiple Git repositories.
-  - Shutdown the SVN server completely after receiving signoff from all involved teams.
 - Led the department's migration from a self-hosted JFrog Artifactory instance to AWS CodeArtifact.
   - All existing data from Artifactory was retained.
   - To minimize disruption to development teams, we implemented dual-publishing in the central build library during the transition phase.
@@ -79,22 +100,45 @@ Full-Time Remote
 
 <div class="box">
 
+{{% columns %}}
+
 ### J. C. Penney
 
-{{% columns %}}
-DevOps Engineer
 <--->
-Plano, TX
+Hybrid Remote/Plano, TX
 {{% /columns %}}
 
+{{% columns %}}
+
+#### DevOps Engineer
+
+<--->
 <span class="date" id="jcp-start">2018-06-12T08:00:00-05:00</span>--<span class="date" id="jcp-end">2021-02-19T17:00-06:00</span>
 <span class="tenure" id="jcp-tenure"></span>
+{{% /columns %}}
 
 {{% details title="Title History" open=true %}}
 
-- <span class="date">2018-06</span>: Hired as Engineering Intern
-- <span class="date">2018-08</span>: Promoted to Junior Engineer
-- <span class="date">2020-01</span>: Promoted to Engineer 1
+{{< columns >}}
+DevOps Engineer 1
+<--->
+<span class="date" id="jcp_1-start">2020-01-12T00:00:00-05:00</span>--<span class="date" id="jcp_1-end">2021-02-12T17:00-06:00</span>
+<span class="tenure" id="jcp_1-tenure"></span>
+{{< /columns >}}
+
+{{< columns >}}
+DevOps Engineer Junior
+<--->
+<span class="date" id="jcp_jr-start">2018-08-12T00:00:00-05:00</span>--<span class="date" id="jcp_jr-end">2020-01-12T00:00:00-05:00</span>
+<span class="tenure" id="jcp_jr-tenure"></span>
+{{< /columns >}}
+
+{{< columns >}}
+DevOps Intern
+<--->
+<span class="date" id="jcp_intern-start">2018-06-12T08:00:00-05:00</span>--<span class="date" id="jcp_intern-end">2018-08-12T00:00:00-05:00</span>
+<span class="tenure" id="jcp_intern-tenure"></span>
+{{< /columns >}}
 
 {{% /details %}}
 
@@ -120,18 +164,24 @@ Plano, TX
 
 <div class="box">
 
+{{% columns %}}
+
 ### Northrop Grumman
 
-{{% columns %}}
-Engineering Intern
 <--->
 Oklahoma City, OK
 {{% /columns %}}
 
+{{% columns %}}
+
+#### Engineering Intern
+
+<--->
 <span class="date" id="ng-start">2016-05</span>--<span class="date" id="ng-end">2016-08</span>
 <span class="tenure" id="ng-tenure"></span>
+{{% /columns %}}
 
-- Collaborated with other interns to design and execute experiment to test Distributed Data Service (DDS) middleware.
+- Collaborated with other interns to design and run experiments to test Distributed Data Service (DDS) middleware.
   - Tasked with measuring the impact various quality of service (QoS) policies had on the performance of DDS.
   - Templated C++ source code with Python in order to generate DDS entities at production scale.
   - Automated the capture of DDS's network traffic during specific lifecycle phase with Wireshark.
@@ -143,15 +193,21 @@ Oklahoma City, OK
 
 <div class="box">
 
+{{% columns %}}
+
 ### Lenoir City Utilities Board
 
-{{% columns %}}
-IT Intern
 <--->
 Lenoir City, TN
 {{% /columns %}}
 
+{{% columns %}}
+
+#### IT Intern
+
+<--->
 Summers 2013, 14, 15 (8 months)
+{{% /columns %}}
 
 - Developed prototype Android app to streamline customer service requests.
   - Independently performed mockup, implementation, and testing.
@@ -169,16 +225,23 @@ See my GitHub profile, [@lafrenierejm](https://github.com/lafrenierejm/), for a 
 
 <div class="box">
 
+{{% columns %}}
+
 ### gron
 
-{{% columns %}}
-Fork author
 <--->
 [Changes relative to upstream](https://github.com/tomnomnom/gron/compare/master...lafrenierejm:gron:master)
 {{% /columns %}}
 
+{{% columns %}}
+
+#### Fork author
+
+<--->
 <span class="date" id="gron-start">2023-07-06</span>--<span class="date" id="gron-end">Present</span>
 <span class="tenure" id="ripsecrets-tenure"></span>
+
+{{% /columns %}}
 
 CLI application written in Go that flattens JSON and YAML to make it easily greppable.
 
@@ -189,16 +252,22 @@ CLI application written in Go that flattens JSON and YAML to make it easily grep
 
 <div class="box">
 
+{{% columns %}}
+
 ### ripgrep-all
 
-{{% columns %}}
-Contributor
 <--->
 [Authored pull requests](https://github.com/phiresky/ripgrep-all/pulls?q=is%3Apr+author%3Alafrenierejm)
 {{% /columns %}}
 
+{{% columns %}}
+
+#### Contributor
+
+<--->
 <span class="date" id="rga-start">2022-12-01</span>--<span class="date" id="rga-end">Present</span>
 <span class="tenure" id="rga-tenure"></span>
+{{% /columns %}}
 
 Command-line interface (CLI) application written in Rust that extracts textual information from non-text files (e.g. PDF, sqlite), caches the resulting text, and transparently runs [ripgrep](https://github.com/BurntSushi/ripgrep) on the text for high-performance searching.
 
@@ -210,16 +279,22 @@ Command-line interface (CLI) application written in Rust that extracts textual i
 
 <div class="box">
 
+{{% columns %}}
+
 ### ripsecrets
 
-{{% columns %}}
-Contributor
 <--->
 [Authored Pull Requests](https://github.com/sirwart/ripsecrets/pulls?q=is%3Apr+author%3Alafrenierejm)
 {{% /columns %}}
 
+{{% columns %}}
+
+#### Contributor
+
+<--->
 <span class="date" id="ripsecrets-start">2022-04-01</span>--<span class="date" id="ripsecrets-end">Present</span>
 <span class="tenure" id="ripsecrets-tenure"></span>
+{{% /columns %}}
 
 CLI application written in Rust that scans a codebase for cleartext secrets.
 
@@ -231,16 +306,22 @@ CLI application written in Rust that scans a codebase for cleartext secrets.
 
 <div class="box">
 
+{{% columns %}}
+
 ### standard-dirs.el
 
-{{% columns %}}
-Author and maintainer
 <--->
 [Source code](https://github.com/lafrenierejm/standard-dirs.el)
 {{% /columns %}}
 
+{{% columns %}}
+
+#### Author and maintainer
+
+<--->
 <span class="date" id="stddirs-start">2018-03-01</span>--<span class="date" id="stddirs-end">Present</span>
 <span class="tenure" id="stddirs-tenure"></span>
+{{% /columns %}}
 
 Emacs library to provide platform-specific paths for reading and writing configuration, cache, and other data.
 
@@ -251,16 +332,22 @@ Emacs library to provide platform-specific paths for reading and writing configu
 
 <div class="box">
 
+{{% columns %}}
+
 ### emacs-ghq
 
-{{% columns %}}
-Maintainer
 <--->
 [Source code](https://github.com/lafrenierejm/emacs-ghq)
 {{% /columns %}}
 
+{{% columns %}}
+
+#### Maintainer
+
+<--->
 <span class="date" id="ghq-start">2023-05-01</span>--<span class="date" id="ghq-end">Present</span>
 <span class="tenure" id="ghq-tenure"></span>
+{{% /columns %}}
 
 Emacs utility for leveraging [ghq](https://github.com/x-motemen/ghq) to manage local repositories.
 
@@ -268,16 +355,22 @@ Emacs utility for leveraging [ghq](https://github.com/x-motemen/ghq) to manage l
 
 <div class="box">
 
+{{% columns %}}
+
 ### ietf-cli
 
-{{% columns %}}
-Author
 <--->
 [Source code](https://github.com/lafrenierejm/ietf-cli)
 {{% /columns %}}
 
+{{% columns %}}
+
+#### Author
+
+<--->
 <span class="date" id="ietf-start">2017-06-01</span>--<span class="date" id="ietf-end">2017-07-31</span>
 <span class="tenure" id="ietf-tenure"></span>
+{{% /columns %}}
 
 Alternative to the [command-line program espoused on ietf.org's wiki](https://trac.tools.ietf.org/tools/ietf-cli/), motivated by a desire for better querying features and a cleaner codebase.
 My goals for the rewrite were to use then-idiomatic Python 3 and provide easy querying.
@@ -294,16 +387,22 @@ SQLite was chosen for the database implementation due to the single-user nature 
 
 <div class="box">
 
+{{% columns %}}
+
 ### format-flowed.vim
 
-{{% columns %}}
-Author
 <--->
 [Source code](https://gitlab.com/lafrenierejm/vim-format-flowed)
 {{% /columns %}}
 
+{{% columns %}}
+
+#### Author
+
+<--->
 <span class="date" id="fflowed-start">2016-11-01</span>--<span class="date" id="fflowed-end">2017-01-31</span>
 <span class="tenure" id="fflowed-tenure"></span>
+{{% /columns %}}
 
 Wrote a Vim plugin enabling full support of [RFC 3676 _The Text/Plain Format and DelSp Parameters_](https://tools.ietf.org/html/rfc3676) in Vim's `mail` filetype.
 The plugin dynamically sets `formatoptions` and `tab` settings based on the location of the cursor in a buffer.
