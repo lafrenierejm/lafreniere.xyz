@@ -85,8 +85,8 @@ Build and Release Engineer 2
   - Acted as technical lead and individual contributor for team's System and Organization Controls (SOC) 2 epics, resulting in
     - 50% fewer source code control policy exceptions across the department,
     - 80% reduction in time spent gathering compliance data, and
-    - auditable secret rotation process.
-  - Enabled GitHub repository settings to be self-served by engineering teams.
+    - a rotation process for repository-level secrets (e.g. access tokens) that is auditable.
+  - Enabled GitHub repository settings to be self-served by engineering teams while ensuring automated SOC 2 compliance.
 - Collaborated with InfoSec and Compliance teams to draft a company-wide open source contribution policy.
 - Improved reliability and development iteration speed of LLM agent platform through infrastructure and observability enhancements.
   - Designed and implemented deployment automation to ensure bit-for-bit reproducibility between stage and production artifacts.
@@ -153,7 +153,7 @@ DevOps Intern
 
 {{% /details %}}
 
-- Led the development of department's Python RESTful service framework to create a first-class experience for Python machine learning developers in a Spring Boot-centric ecosystem.
+- Led the development of the department's Python RESTful service framework to create a first-class experience for Python machine learning developers in a Spring Boot-centric ecosystem.
   The company's first customer-serving Python services were written on top of the framework.
   - Designed and implemented configuration layering system to integrate data from Spring Cloud, environment variables exposed by Docker Compose, command-line options, and YAML files.
   - Adopted existing open source libraries to perform service registration with Eureka, then incrementally rewrote the library's threading and payload serialization on an internal fork to fix stability issues.
@@ -193,9 +193,9 @@ Oklahoma City, OK
 {{% /columns %}}
 
 - Collaborated with other interns to design and run experiments to test Distributed Data Service (DDS) middleware.
-  - Tasked with measuring the impact various quality of service (QoS) policies had on the performance of DDS.
+  - Tasked with measuring the impact that various quality of service (QoS) policies had on the performance of DDS.
   - Templated C++ source code with Python in order to generate DDS entities at production scale.
-  - Automated the capture of DDS's network traffic during specific lifecycle phase with Wireshark.
+  - Automated the capture of DDS's network traffic during a specific lifecycle phase with Wireshark.
 - Oversaw setup and maintenance of software on isolated test network.
   - Explored policies for publishing generic configurations in a security-conscious environment.
 - Guided teammates in version control best practices.
@@ -223,7 +223,7 @@ Summers 2013, 14, 15 (8 months)
 - Developed prototype Android app to streamline customer service requests.
   - Independently performed mockup, implementation, and testing.
 - Resolved help desk calls for approximately 75 employees across two buildings.
-- Wrote and published [Symantec Endpoint uninstaller](https://github.com/lafrenierejm/Symantec_Endpoint_Uninstall_Script), a script to cleanup failed Symantec Endpoint installations sufficiently to allow for successful reinstallation.
+- Wrote and published [Symantec Endpoint uninstaller](https://github.com/lafrenierejm/Symantec_Endpoint_Uninstall_Script), a script to clean up failed Symantec Endpoint installations sufficiently to allow for successful reinstallation.
 
 </div>
 
@@ -280,7 +280,7 @@ CLI application written in Go that flattens JSON and YAML to make it easily grep
 <span class="tenure" id="rga-tenure"></span>
 {{% /columns %}}
 
-Command-line interface (CLI) application written in Rust that extracts textual information from non-text files (e.g. PDF, sqlite), caches the resulting text, and transparently runs [ripgrep](https://github.com/BurntSushi/ripgrep) on the text for high-performance searching.
+Command-line interface (CLI) application written in Rust that extracts textual information from non-text files (e.g. PDF, SQLite), caches the resulting text, and transparently runs [ripgrep](https://github.com/BurntSushi/ripgrep) on the text for high-performance searching.
 
 - Implemented `async` support in the Rust codebase for the [pagebreak algorithm](https://github.com/phiresky/ripgrep-all/pull/150).
 - Introduced Nix flake with [Rust library caching](https://github.com/phiresky/ripgrep-all/pull/148) and [propagated runtime dependencies](https://github.com/phiresky/ripgrep-all/pull/187) for efficient, reproducible builds.
