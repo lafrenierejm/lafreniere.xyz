@@ -140,7 +140,7 @@ resource "aws_route53_record" "dmarc" {
   name    = "_dmarc.${aws_route53_zone.root.name}"
   type    = "TXT"
   ttl     = local.ttl
-  records = ["v=DMARC1; p=none;"]
+  records = ["v=DMARC1; p=reject;"]
 }
 
 # Certificate
