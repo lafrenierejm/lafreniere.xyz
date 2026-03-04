@@ -9,8 +9,6 @@ draft: false
 
 ## Education
 
-<div class="box">
-
 {{% columns %}}
 
 ### University of Texas at Dallas
@@ -21,7 +19,7 @@ Richardson, TX
 
 {{% columns %}}
 
-#### BSc in Software Engineering with Honors
+**BSc in Software Engineering with Honors**
 
 <--->
 <span class="date" id="utd-start">2014-08-25T08:00:00-06:00</span>–<span class="date" id="utd-end">2018-05-10T08:00:00-06:00</span>
@@ -33,11 +31,7 @@ Richardson, TX
   Named Secretary for Fall 2016 semester.
 - Elected officer in Collegium V Honors College for 2016–17 and 17–18 academic years.
 
-</div>
-
 ## Work Experience
-
-<div class="box">
 
 {{% columns %}}
 
@@ -49,7 +43,7 @@ Remote
 
 {{% columns %}}
 
-#### Site Reliability Engineer
+**Site Reliability Engineer**
 
 <--->
 <span class="date" id="ren-start">2021-02-22T08:00:00-05:00</span>--<span class="date" id="ren-end">Present</span>
@@ -116,10 +110,6 @@ Build and Release Engineer 2
     1. Improved baseline performance versus Flask and opened up even more performance improvements via support for `async`.
   - Measurably improved the performance of key endpoints by selectively replacing uses of synchronous IO libraries (namely [Requests](https://requests.readthedocs.io/en/latest/) and [botocore](https://botocore.amazonaws.com/v1/documentation/api/latest/index.html)) with asynchronous libraries ([HTTPX](https://www.python-httpx.org/) and [aiobotocore](https://github.com/aio-libs/aiobotocore), respectively).
 
-</div>
-
-<div class="box">
-
 {{% columns %}}
 
 ### J. C. Penney
@@ -130,7 +120,7 @@ Hybrid Remote/Plano, TX
 
 {{% columns %}}
 
-#### DevOps Engineer
+**DevOps Engineer**
 
 <--->
 <span class="date" id="jcp-start">2018-06-12T08:00:00-05:00</span>--<span class="date" id="jcp-end">2021-02-19T17:00-06:00</span>
@@ -180,10 +170,6 @@ DevOps Intern
 - Helped application teams create and troubleshoot Jenkins pipelines, Gradle builds, and Docker Swarm container deployments.
 - Automated the migration of department's chat groups from Atlassian Hipchat to Microsoft Teams.
 
-</div>
-
-<div class="box">
-
 {{% columns %}}
 
 ### Northrop Grumman
@@ -194,7 +180,7 @@ Oklahoma City, OK
 
 {{% columns %}}
 
-#### Engineering Intern
+**Engineering Intern**
 
 <--->
 <span class="date" id="ng-start">2016-05</span>--<span class="date" id="ng-end">2016-08</span>
@@ -209,10 +195,6 @@ Oklahoma City, OK
   - Explored policies for publishing generic configurations in a security-conscious environment.
 - Guided teammates in version control best practices.
 
-</div>
-
-<div class="box">
-
 {{% columns %}}
 
 ### Lenoir City Utilities Board
@@ -223,7 +205,7 @@ Lenoir City, TN
 
 {{% columns %}}
 
-#### IT Intern
+**IT Intern**
 
 <--->
 Summers 2013, 14, 15 (8 months)
@@ -234,16 +216,12 @@ Summers 2013, 14, 15 (8 months)
 - Resolved help desk calls for approximately 75 employees across two buildings.
 - Wrote and published [Symantec Endpoint uninstaller](https://github.com/lafrenierejm/Symantec_Endpoint_Uninstall_Script), a script to clean up failed Symantec Endpoint installations sufficiently to allow for successful reinstallation.
 
-</div>
-
 ## Open Source
 
 {{% hint warning %}}
 The contributions listed here are _not_ exhaustive.
 See my GitHub profile, [@lafrenierejm](https://github.com/lafrenierejm/), for a more comprehensive list of recent contributions.
 {{% /hint %}}
-
-<div class="box">
 
 {{% columns %}}
 
@@ -255,7 +233,7 @@ See my GitHub profile, [@lafrenierejm](https://github.com/lafrenierejm/), for a 
 
 {{% columns %}}
 
-#### Fork author
+**Fork author**
 
 <--->
 <span class="date" id="gron-start">2023-07-06</span>--<span class="date" id="gron-end">Present</span>
@@ -268,10 +246,6 @@ CLI application written in Go that flattens JSON and YAML to make it easily grep
 - Replaced stdlib's `encoding/json` package with a third-party package in order to [optionally retain key order](https://github.com/lafrenierejm/gron/commit/8fa7e0d49fa4dd13c5732edc587ca12d65894924) of input JSON.
 - [Rewrote CLI entrypoint using Cobra](https://github.com/lafrenierejm/gron/commit/60996c48591c6e431b14d8078ead2eedfeac7abd) to standardize formatting of help text.
 
-</div>
-
-<div class="box">
-
 {{% columns %}}
 
 ### ripgrep-all
@@ -282,7 +256,7 @@ CLI application written in Go that flattens JSON and YAML to make it easily grep
 
 {{% columns %}}
 
-#### Contributor
+**Contributor**
 
 <--->
 <span class="date" id="rga-start">2022-12-01</span>--<span class="date" id="rga-end">Present</span>
@@ -295,10 +269,6 @@ Command-line interface (CLI) application written in Rust that extracts textual i
 - Introduced Nix flake with [Rust library caching](https://github.com/phiresky/ripgrep-all/pull/148) and [propagated runtime dependencies](https://github.com/phiresky/ripgrep-all/pull/187) for efficient, reproducible builds.
 - [Updated CI workflow](https://github.com/phiresky/ripgrep-all/pull/164) to use Nix for reproducibility, resolving spurious failures that were caused by upstream changes in the CI runner.
 
-</div>
-
-<div class="box">
-
 {{% columns %}}
 
 ### ripsecrets
@@ -309,7 +279,7 @@ Command-line interface (CLI) application written in Rust that extracts textual i
 
 {{% columns %}}
 
-#### Contributor
+**Contributor**
 
 <--->
 <span class="date" id="ripsecrets-start">2022-04-01</span>--<span class="date" id="ripsecrets-end">Present</span>
@@ -322,10 +292,6 @@ CLI application written in Rust that scans a codebase for cleartext secrets.
 - Added [GitHub Actions workflow](https://github.com/phiresky/ripgrep-all/tree/master/.github/workflows/ci.yml) to check for successful build and consistent formatting in CI.
 - Defined Docker image in Nix flake and [GitHub Actions workflow](https://github.com/sirwart/ripsecrets/pull/46) to publish to Docker Hub on tag.
 
-</div>
-
-<div class="box">
-
 {{% columns %}}
 
 ### standard-dirs.el
@@ -336,7 +302,7 @@ CLI application written in Rust that scans a codebase for cleartext secrets.
 
 {{% columns %}}
 
-#### Author and maintainer
+**Author and maintainer**
 
 <--->
 <span class="date" id="stddirs-start">2018-03-01</span>--<span class="date" id="stddirs-end">Present</span>
@@ -348,10 +314,6 @@ Emacs library to provide platform-specific paths for reading and writing configu
 - On Linux, the directory paths conform to the [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
 - On macOS, the directory paths conform to Apple’s filesystem documentation ["Where to Put Files"](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPFileSystem/Articles/WhereToPutFiles.html).
 
-</div>
-
-<div class="box">
-
 {{% columns %}}
 
 ### emacs-ghq
@@ -362,7 +324,7 @@ Emacs library to provide platform-specific paths for reading and writing configu
 
 {{% columns %}}
 
-#### Maintainer
+**Maintainer**
 
 <--->
 <span class="date" id="ghq-start">2023-05-01</span>--<span class="date" id="ghq-end">Present</span>
@@ -370,10 +332,6 @@ Emacs library to provide platform-specific paths for reading and writing configu
 {{% /columns %}}
 
 Emacs utility for leveraging [ghq](https://github.com/x-motemen/ghq) to manage local repositories.
-
-</div>
-
-<div class="box">
 
 {{% columns %}}
 
@@ -385,7 +343,7 @@ Emacs utility for leveraging [ghq](https://github.com/x-motemen/ghq) to manage l
 
 {{% columns %}}
 
-#### Author
+**Author**
 
 <--->
 <span class="date" id="ietf-start">2017-06-01</span>--<span class="date" id="ietf-end">2017-07-31</span>
@@ -403,10 +361,6 @@ SQLite was chosen for the database implementation due to the single-user nature 
 - Implemented subcommand-style CLI frontend using `argparse`.
 - Depended on `rsync` as an external program to fetch latest versions of the upstream IETF publications.
 
-</div>
-
-<div class="box">
-
 {{% columns %}}
 
 ### format-flowed.vim
@@ -417,7 +371,7 @@ SQLite was chosen for the database implementation due to the single-user nature 
 
 {{% columns %}}
 
-#### Author
+**Author**
 
 <--->
 <span class="date" id="fflowed-start">2016-11-01</span>--<span class="date" id="fflowed-end">2017-01-31</span>
@@ -436,5 +390,3 @@ The project started as a refactor of an existing script found in the Vim user Go
   - the effects of trailing whitespace, and
   - the behavior of tab characters.
 - Packaged the script for use with modern (at the time) Vim plugin managers.
-
-</div>
