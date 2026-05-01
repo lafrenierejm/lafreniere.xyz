@@ -22,7 +22,6 @@ Before you begin, you will need:
    For example, `adb pull /sdcard/2937d9d6e8a03973c33443f809287435e44858b8.zip`.
 
 1. Downgrade to OxygenOS 11.
-
    1. Install Qualcomm's USB Drivers on the PC for Emergency Download (EDL) capabilities.
       This will require a reboot to fully install.
    1. Install MSMDownloadTool.
@@ -40,7 +39,6 @@ Before you begin, you will need:
 
 1. Update to the most recent release of OxygenOS 11.
    Attempting to update directly to OxygenOS 12 or 13 without this step will fail.
-
    1. Let the phone boot normally then skip through the setup.
    1. Enable USB debugging on the phone.
       1. Enable developer mode.
@@ -58,7 +56,6 @@ Before you begin, you will need:
       1. Choose "Install Now".
 
 1. Upgrade to OxygenOS 12.
-
    1. Let the phone boot normally then skip through the setup.
    1. Enable USB debugging on the phone.
       1. Enable developer mode.
