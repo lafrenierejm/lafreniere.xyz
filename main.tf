@@ -79,7 +79,7 @@ resource "aws_route53_record" "srv" {
       priority = 0
       weight   = 1
       port     = 587
-      target   = "smtp.fastmail.com"
+      target   = "smtp.fastmail.com."
     }
     imap = {
       priority = 0
@@ -91,7 +91,7 @@ resource "aws_route53_record" "srv" {
       priority = 0
       weight   = 1
       port     = 993
-      target   = "imap.fastmail.com"
+      target   = "imap.fastmail.com."
     }
     pop3 = {
       priority = 0
@@ -178,7 +178,8 @@ resource "aws_route53_record" "caa" {
 ## Add the DNS record for validation.
 resource "aws_route53_record" "acm_validation" {
   for_each = {
-    for dvo in aws_acm_certificate.lafreniere_xyz.domain_validation_options : dvo.domain_name => {
+    for dvo in aws_acm_certificate.lafreniere_xyz.domain_validation_options
+    : dvo.domain_name => {
       name   = dvo.resource_record_name
       record = dvo.resource_record_value
       type   = dvo.resource_record_type
