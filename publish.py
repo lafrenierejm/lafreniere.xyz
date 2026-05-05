@@ -45,18 +45,16 @@ def replace_dir_links(path: Path, dir_names: list[str]):
     for child in path.iterdir():
         if child.is_dir():
             replace_dir_links(child, dir_names)
-        elif child.is_file() and (
-            child.suffix == ".html" or child.suffix == ".xml"
-        ):
+        elif child.is_file() and (child.suffix == ".html" or child.suffix == ".xml"):
             print(f"Replacing content in {child}")
             fd, tmp_file = mkstemp()
             close(fd)
-            with (open(child) as input, open(tmp_file, "w") as output):
+            with open(child) as input, open(tmp_file, "w") as output:
                 for line in input:
                     for dir_name in dir_names:
                         line = line.replace(f"{dir_name}/", f"{dir_name}.html")
                     output.write(line)
-            with (open(tmp_file) as input, open(child, "w") as output):
+            with open(tmp_file) as input, open(child, "w") as output:
                 for line in input:
                     output.write(line)
 

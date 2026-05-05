@@ -37,6 +37,8 @@
               enable = true;
               includes = ["*.md" "*.html" "*.js" "*.json" "*.tfstate"];
             };
+            ruff.enable = true;
+            ruff-format.enable = true;
             terraform = {
               enable = true;
               package = tofu;
