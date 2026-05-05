@@ -49,6 +49,7 @@
         # Pre-commit hooks.
         pre-commit = {
           check.enable = true;
+          settings.package = pkgs.prek;
           settings.hooks = {
             treefmt = {
               enable = true;
